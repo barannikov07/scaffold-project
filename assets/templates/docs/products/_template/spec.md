@@ -53,6 +53,16 @@ is safe to run twice, and confirmation that it is applied before the code merges
 
 none
 
+## Work items
+
+How the build is split for delegation (see `workflow.md`, "How Claude builds"). Each item is
+independent, names the files it may touch, the contract it must satisfy, and how to know it is
+done. Three files or fewer in total: one item, built by the orchestrator.
+
+| # | Item | Files it may touch | Contract | Done when |
+|---|---|---|---|---|
+| 1 | | | | |
+
 ## Test plan
 
 Every line is executed on localhost before push. Written so a person could follow it.
@@ -66,12 +76,13 @@ cleanup.
 
 ## Before this passes
 
-The gate for stage 4. Claude ticks the first six when they are true; the owner ticks the last.
+The gate for stage 4. Claude ticks the first seven when they are true; the owner ticks the last.
 
 - [ ] Every PRD flow has the screens and functions that serve it
 - [ ] Permissions cover every action for every role
 - [ ] Edge cases include the empty state and at least one failure
 - [ ] Migration plan is additive only, or "none"
+- [ ] Work items are independent, file-scoped, and together cover every screen and function above
 - [ ] Test plan covers every success criterion in the PRD
 - [ ] Rollback section is honest about data left behind
 - [ ] Owner has read the plain-language sentences and said "approved"

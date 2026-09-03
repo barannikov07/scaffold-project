@@ -48,8 +48,8 @@ index change directly to `main` (`docs(<slug>): PRD`). Plans are documents, not 
 ## 3. Spec
 
 Read `infra.md` and `docs/decisions.md` first. Draft `spec.md`: data model changes (additive
-only), functions, screens, permissions, edge cases, migration plan, test plan covering every
-success criterion, rollback. Open each technical section with one plain sentence.
+only), functions, screens, permissions, edge cases, migration plan, work items for delegation,
+test plan covering every success criterion, rollback. Open each technical section with one plain sentence.
 
 Present the plain sentences and the test plan to the owner; the technical tables are for
 you. Iterate until "approved" and the checklist is ticked. Record the date, set the index row to
@@ -57,8 +57,9 @@ stage Spec, and commit to `main` (`docs(<slug>): spec`).
 
 ## 4. Hand off to build
 
-Tell the owner what happens next: a branch `feat/<slug>`, the migration if any, the build, then
-`/ship` when ready. Update `docs/product-index.md` "Updated" date. Ask whether to start building
+Tell the owner what happens next: a branch `feat/<slug>`, the migration if any, the build (by
+you directly if small, by builder agents from the spec's work items if not, with you reviewing),
+then `/ship` when ready. Update `docs/product-index.md` "Updated" date. Ask whether to start building
 now.
 
 ## Rules

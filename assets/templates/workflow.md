@@ -64,7 +64,9 @@ of the code never leaves the database inconsistent.
 
 **Build.** One feature per branch, branch named `feat/<slug>`, days not weeks. The same branch
 updates `guide.md`, the product index, the roadmap, and `infra.md` if anything cross-cutting
-changed. Verified locally before push.
+changed. Verified locally before push. Anything larger than a few files is built by delegation:
+the orchestrator splits the spec's work items across builder agents and reviews the result. See
+"How Claude builds" below.
 
 **QA.** Two halves. Claude's verification: build passes, the verify script passes, every line of
 the spec's test plan is executed on localhost. The owner's acceptance: Claude turns the PRD's
@@ -82,11 +84,43 @@ in the guide's "Outcome" section on whether the success criteria were met, add a
 anything surprising was learned, and ask the owner whether the order of the remaining milestones
 still holds.
 
+## How Claude builds: orchestrator and builders
+
+Thinking and building are different jobs and deserve different models. The most capable model
+available acts as the **orchestrator**: it interviews, assesses, writes the PRD and the spec,
+splits the work, reviews the code, and decides what ships. Faster, cheaper models act as
+**builders**: each takes one self-contained work item and implements it. The owner only ever
+talks to the orchestrator.
+
+| Role | Model tier | Does | Never does |
+|---|---|---|---|
+| Orchestrator | The strongest model available (Fable or Opus tier) | Plans, writes PRD and spec, splits work into items, briefs builders, reviews every diff against the spec, fixes docs, ships | Trusts a builder's own report of success |
+| Builder | A fast model (Sonnet tier, or Opus for hard items) | Implements one work item from its brief on a branch or worktree, runs the tests it was given, reports what it changed | Touches files outside its brief, changes the spec, merges |
+
+The loop, for every Full-size feature:
+
+1. **Plan.** The orchestrator writes the spec's "Work items" section: independent items, each with
+   the files it may touch, the contract it must satisfy, and its done-criteria. Items that touch
+   the same files are merged into one or given separate worktrees.
+2. **Delegate.** One builder per item, in parallel, each with a self-contained brief: the item, the
+   relevant spec sections, `infra.md` pointers, the tripwires, and how to verify. Small features
+   (three files or fewer, or nothing parallel) are built by the orchestrator itself; say so.
+3. **Review.** The orchestrator reads the combined diff against the spec and the tripwires, runs
+   the verify script and the test plan, and lists findings. Only correctness and security findings
+   go back to builders; style is fixed inline or noted.
+4. **Fix.** Confirmed findings return to the builder that wrote the code, as file-anchored
+   instructions. Scope only shrinks in a fix round: no new features, no refactors.
+5. **Stop.** At most two review-and-fix rounds. If blockers remain after the second, the
+   orchestrator stops and tells the owner: the plan is probably wrong, not the builders.
+
+Done means the verify script passes, the test plan was executed, zero confirmed critical findings,
+and the docs are true. Not "the reviewer ran out of things to say".
+
 ## Size decides ceremony
 
 | Size | When | Path |
 |---|---|---|
-| Small | No new screen, table, permission, external service, or money path. Copy changes, styling, bug fixes, small tweaks to an existing feature | Build → QA → Release → Close. Guide updated. No PRD or spec. Noted in the guide's changelog |
+| Small | No new screen, table, permission, external service, or money path. Copy changes, styling, bug fixes, small tweaks to an existing feature | Build → QA → Release → Close. Built by the orchestrator directly. Guide updated. No PRD or spec. Noted in the guide's changelog |
 | Full | Anything else | All nine stages |
 
 When in doubt, it is Full. The cost of a one-page PRD is an hour; the cost of an unplanned schema

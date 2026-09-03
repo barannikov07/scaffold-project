@@ -37,6 +37,16 @@ not to write code themselves. That changes three things:
 5. **Small reversible steps.** Short-lived branches, additive migrations, one feature per pull
    request. Rollback is reverting one merge commit.
 
+## Thinking and building are different jobs
+
+The strongest model available is the orchestrator: it talks to the owner, writes the PRD and
+spec, splits the work into file-scoped items, briefs builder agents, reviews their diffs against
+the spec and tripwires, and decides what ships. Cheaper, faster models build from those briefs.
+The loop is review, delegate fixes, review, and it stops after two rounds: if blockers remain,
+the plan is wrong, not the builders, and the owner hears about it. This keeps quality where it
+matters (judgment) and cost where it does not (typing), and it is why the spec template has a
+"Work items" section.
+
 ## The planning stack: four altitudes
 
 Progress tracking fails when one document tries to hold plan, status, history, and reasoning at

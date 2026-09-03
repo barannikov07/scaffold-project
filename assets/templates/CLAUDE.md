@@ -48,6 +48,7 @@ One line each. The full text and the reasoning live in [workflow.md](workflow.md
 5. Secrets live only in environment variables, never in the repository or in any document.
 6. Small reversible steps: one feature per branch, branches live days not weeks.
 7. Changing the vision is a decision. Record it; never let a PRD quietly drift from it.
+8. The strongest model plans and reviews; builders build from briefs; two review rounds, then stop and tell the owner.
 
 ## Who does what
 

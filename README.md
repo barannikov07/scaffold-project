@@ -32,6 +32,7 @@ docs/products/tech-setup/     day-one technical setup, tracked like a feature
 - **Tripwires over tribal knowledge.** Every hard invariant gets one line in CLAUDE.md pointing to its owner.
 - **Size decides ceremony.** Small changes go straight to build; anything with a new screen, table, permission, or money path gets the full path.
 - **The owner decides at three moments**: approving the PRD, accepting the feature, approving the release. Claude does the rest.
+- **Orchestrator and builders.** The strongest model plans, writes the PRD and spec, and reviews. Cheaper models build from file-scoped briefs. Two review rounds, then stop and report.
 
 ## Install
 

@@ -8,7 +8,11 @@ description: Take a built feature through QA, release, and close: verify locally
 Move one feature from Build through QA → Release → Close as defined in `workflow.md`. The owner
 has two decisions here: accepting the feature and approving the release. Everything else is yours.
 
-## 1. Verify (Claude)
+## 1. Verify (the orchestrator)
+
+This is the orchestrator's job, never a builder's. If builders produced the code, their reports
+are inputs, not evidence: read the diff. If the review loop in `workflow.md` ("How Claude
+builds") has already used its two rounds and blockers remain, stop here and tell the owner.
 
 On the feature branch:
 
