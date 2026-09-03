@@ -1,0 +1,28 @@
+{
+  "skill_name": "scaffold-project",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I want to start a new project. I'm not a developer; I'll be building it with Claude. Set up the project from the beginning the way a top product team would: the documents, the product process, the roadmap and vision, everything I need so that any future Claude session can build features properly. No app code yet, just the docs and process. Then start the first PRD.\n\nSince I can't chat back and forth right now, here are my answers to whatever you'd ask:\n\n- Name: ChoirHub\n- What it does, for whom: helps a community choir's conductor manage members, rehearsals and attendance so nobody has to chase people on WhatsApp.\n- End state when it's perfect: every rehearsal is planned in the app, every singer knows what to prepare, attendance and fees take zero admin time, and the conductor can see at a glance who is drifting away before they quit.\n- Users: the conductor (does everything) and singers (see their own stuff, mark themselves as coming or not). Maybe a section leader later.\n- Sign in: yes, singers should sign in. Email is fine, or Google, you decide.\n- Data that matters: attendance history must never be lost or edited after the fact; singers must never see each other's phone numbers or emails.\n- Money: yes, eventually membership fees will be paid through it. Not in the first version.\n- First feature: the conductor creates rehearsals with date, place and songs, singers say \"coming / not coming\", and the conductor sees the list before the rehearsal.\n- Where it runs: a website that works on phones.\n- Already have: a Vercel account and a GitHub account. Nothing else.\n- My name: Sasha.\n",
+      "expected_output": "A docs-only project scaffold: router CLAUDE.md, vision, roadmap, product index, decisions, workflow, infra.md, PR template, project commands, first feature PRD drafted to the approval gate, one git commit on main, hand-off message with owner-only checklist.",
+      "files": [],
+      "assertions": [
+        "CLAUDE.md exists and every relative link in it resolves to an existing file",
+        "CLAUDE.md contains a tripwire for attendance history being immutable and one for singer contact privacy",
+        "docs/vision.md exists with an end-state section, principles, non-goals and a changelog",
+        "docs/roadmap.md has a milestone table with a Tech setup row and a row for the first feature, with a status column",
+        "docs/product-index.md has rows for Tech setup and the first feature, and every link in it resolves",
+        "docs/decisions.md contains D-001 (stack, with reasoning mentioning Vercel) and D-002 (process)",
+        "workflow.md names all nine stages (Idea, Assess, PRD, Spec, Migrate, Build, QA, Release, Close) and forbids CLI deploys",
+        "infra.md lists app roles (conductor, singer), accounts (GitHub, Vercel, database), and env var names without any values",
+        "No unfilled {{placeholder}} remains outside docs/products/_template, and every TBD carries an owner tag like TBD(owner) or TBD(claude)",
+        "Git repository has exactly one commit on main whose message starts with 'docs: project scaffold'",
+        ".github/pull_request_template.md exists with a merge checklist mentioning guide, index, roadmap, secrets",
+        "Project commands exist: .claude/skills/new-feature, ship, status, decision, each with a SKILL.md",
+        "First feature PRD exists with non-empty Problem, Non-goals and Success criteria, is NOT marked approved, and the spec is still the empty template",
+        "FINAL_MESSAGE.md includes the owner-only checklist (create GitHub repository, connect Vercel, create database project) and says the first PRD is the next step",
+        "No application code was created (no package.json, no src/ directory)"
+      ]
+    }
+  ]
+}
