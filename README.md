@@ -18,7 +18,7 @@ docs/vision.md                north star; changes only through a recorded decisi
 docs/roadmap.md               one ordered milestone table: planned, delivered, next
 docs/product-index.md         one row per feature with its stage and links
 docs/decisions.md             append-only decision log, D-001 onward
-docs/products/<slug>/         prd.md (frozen), spec.md (frozen), guide.md (living)
+docs/products/<slug>/         prd.md (record), spec.md (record), guide.md (living)
 docs/products/tech-setup/     day-one technical setup, tracked like a feature
 .github/pull_request_template.md
 .claude/skills/               /new-feature, /ship, /status, /decision
@@ -27,7 +27,7 @@ docs/products/tech-setup/     day-one technical setup, tracked like a feature
 ## The ideas behind it
 
 - **CLAUDE.md is a router, not an encyclopedia.** Every fact lives in one document; everything else links to it.
-- **Plans are frozen, guides are living.** PRDs and specs record what was decided. Guides carry current truth.
+- **Records are kept, guides are living, the roadmap is fluid.** A feature's PRD and spec become a record of what was agreed once its build starts. Guides carry current truth. The roadmap and vision change whenever you learn something, with the change and its reason written down.
 - **Done includes docs.** Nothing merges until the guide, index, and roadmap reflect the change.
 - **Tripwires over tribal knowledge.** Every hard invariant gets one line in CLAUDE.md pointing to its owner.
 - **Size decides ceremony.** Small changes go straight to build; anything with a new screen, table, permission, or money path gets the full path.

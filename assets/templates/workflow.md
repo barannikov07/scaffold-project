@@ -50,11 +50,12 @@ is recorded in the index row. Assessments for Full-size features are pasted at t
 
 **PRD.** Problem, users, scope, non-goals, flows, success criteria, vision fit. One page for most
 features. Written just in time: the PRD for a milestone is written when that milestone is next, not
-before. Frozen once the build starts; corrections after that go in the guide, and a genuinely new
-plan is a new PRD (`prd-2-<short>.md`) in the same folder.
+before. A draft until the build starts; from then on it is a record of what was agreed and is not
+edited. Corrections go in the guide, and a genuine change of mind is a new PRD
+(`prd-2-<short>.md`) in the same folder, so the history of thinking is kept.
 
 **Spec.** Data model changes, functions or endpoints, screens, permissions, edge cases, migration
-plan, test plan, rollback. Written after the PRD is approved, before any code. Frozen once built.
+plan, test plan, rollback. Written after the PRD is approved, before any code. A record once built.
 
 **Migrate.** Only additive changes: add tables, add nullable columns, add indexes. Never rename or
 drop in the same change that adds. The change is applied to the live database out of band and

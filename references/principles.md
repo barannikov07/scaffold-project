@@ -21,10 +21,14 @@ not to write code themselves. That changes three things:
 1. **CLAUDE.md is a router, not an encyclopedia.** It is a map with pointers, tripwires, and rules
    of the road. Every fact lives in exactly one document; everything else links to it. A
    CLAUDE.md that repeats facts drifts the moment one copy changes.
-2. **Plans are frozen, guides are living.** PRDs and specs record what was decided and are never
-   edited to match reality after the build. Guides carry current truth and must match reality at
-   every merge. Keeping the two apart is what lets you see later where reality diverged from the
-   plan, which is the most useful thing a project history can tell you.
+2. **Records are kept, guides are living, the roadmap is fluid.** A feature's PRD and spec are
+   drafts until its build starts; from then on they are a record of what was agreed and are not
+   edited to match reality. Guides carry current truth and must match reality at every merge.
+   Keeping the two apart is what lets you see later where reality diverged from intent, which is
+   the most useful thing a project history can tell you. The roadmap is the opposite: one-line
+   milestones, PRDs written one milestone ahead at most, so the plan can change tomorrow at the
+   cost of a row edit and a line in its Changes log. A change of mind about a built feature is a
+   new numbered PRD in the same folder, never a rewrite of the old one.
 3. **Done includes docs.** Nothing merges until the guide, product index, and roadmap reflect the
    change. It is a merge requirement, not a courtesy. Docs updated "later" are docs never updated.
 4. **Tripwires over tribal knowledge.** Every hard invariant (immutable records, append-only

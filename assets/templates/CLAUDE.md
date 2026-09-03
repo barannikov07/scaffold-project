@@ -41,7 +41,7 @@ The reasoning behind each line lives in [docs/decisions.md](docs/decisions.md).
 
 One line each. The full text and the reasoning live in [workflow.md](workflow.md).
 
-1. PRD before spec, spec before code. Plans freeze once built; guides stay true.
+1. PRD before spec, spec before code. Once built, the PRD and spec are a record; guides stay true; the roadmap moves.
 2. Done includes docs: the guide, product index, and roadmap change in the same pull request.
 3. Ship only via git and {{HOSTING}}. Never deploy from the command line, never patch production by hand.
 4. Database changes are additive and applied before the code that needs them merges.
@@ -66,7 +66,7 @@ docs/vision.md                north star (changes only via a decision)
 docs/roadmap.md               ordered milestones with status and shipped dates
 docs/product-index.md         one row per feature with stage and links
 docs/decisions.md             append-only decision log, D-001 onward
-docs/products/<slug>/         prd.md (frozen), spec.md (frozen), guide.md (living)
+docs/products/<slug>/         prd.md (record), spec.md (record), guide.md (living)
 docs/products/_template/      copy this for each new feature
 docs/products/tech-setup/     day-one technical setup, tracked like a feature
 .github/pull_request_template.md   merge checklist mirroring the rules

@@ -1,10 +1,10 @@
 # PRD: {{FEATURE_NAME}}
 
-Status: Draft · Approved on: not yet · Frozen on: not yet (the date the build starts)
+Status: Draft · Approved on: not yet · Build started on: not yet
 
-A PRD says what we are building and why, in the owner's language. It is frozen once the build
-starts. If reality turns out different, the guide records it; if the plan itself changes, that is
-a new PRD in this folder.
+A PRD says what we are building and why, in the owner's language. It is a draft until the build
+starts and a record of what was agreed after that. If reality turns out different, the guide
+records it; if you change your mind, that is a new PRD in this folder, not an edit of this one.
 
 ## Assessment
 

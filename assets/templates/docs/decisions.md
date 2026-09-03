@@ -23,7 +23,7 @@ already had that decided the choice.
 **Adopt the documented product process, planning stack, and deploy rules.**
 
 The project follows the nine-stage pipeline in `workflow.md` with size-tiered ceremony, keeps
-plans frozen and guides living, treats docs as a merge requirement, ships only via git to
+PRDs and specs as records once built, guides living, the roadmap fluid, treats docs as a merge requirement, ships only via git to
 {{HOSTING}}, and tracks work in the four-altitude planning stack (vision, roadmap, product index,
 decisions). Rejected: ad-hoc building without written plans, which is fast for a week and
 unrecoverable after a month; a single "status" document mixing plan, history, and reasoning,

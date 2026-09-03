@@ -2,7 +2,7 @@
 
 Living truth. This file describes how the feature works today and must match reality at every
 merge. When the build diverged from the PRD or spec, this is where that is recorded; the plans
-stay frozen.
+stay as the record of what was agreed.
 
 PRD: [prd.md](prd.md) · Spec: [spec.md](spec.md) · Stage: see [product index](../../product-index.md)
 

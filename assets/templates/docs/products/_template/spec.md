@@ -1,10 +1,10 @@
 # Spec: {{FEATURE_NAME}}
 
-Status: Draft · Approved on: not yet · Frozen on: not yet
+Status: Draft · Approved on: not yet · Build started on: not yet
 PRD: [prd.md](prd.md)
 
 A spec says how the feature will be built. Written after the PRD is approved, before any code.
-Frozen once built. Each technical section opens with one plain sentence for the owner.
+Once the build starts it is a record and is not edited. Each technical section opens with one plain sentence for the owner.
 
 ## Data model changes
 
