@@ -8,6 +8,10 @@ a milestone roadmap, a product index, a decisions log, the written workflow, the
 knowledge base, PRD / spec / guide templates, a pull request checklist, and four project commands
 that carry the process. Then it starts the first PRD with you.
 
+## See it work
+
+[How it works](docs/how-it-works.html) walks through a real run (ChoirHub, an app for a community choir): the interview replayed, the generated documents, sequence diagrams of the scaffold session and of one feature's life, the nine-stage pipeline, and the orchestrator-and-builders loop. Open the file in a browser.
+
 ## What you get
 
 ```
