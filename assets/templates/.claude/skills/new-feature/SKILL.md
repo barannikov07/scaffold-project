@@ -11,6 +11,8 @@ owner's decision. Do not write code in this flow; building starts only after the
 ## Before anything
 
 Read, in this order: `CLAUDE.md`, `docs/vision.md`, `docs/roadmap.md`, `docs/product-index.md`.
+Calibrate every message to the owner profile in `CLAUDE.md` (see workflow.md, "How Claude
+talks to the owner"): explain once per project, default to less.
 The vision is the prism for everything below; if you have not read it in this session, you cannot
 assess.
 

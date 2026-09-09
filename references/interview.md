@@ -10,6 +10,18 @@ Where the owner's answer is vague, ask one follow-up at most, then move on and m
 
 ## Questions
 
+Two questions about the owner come first. They set how Claude talks for the life of the project:
+how much to explain, how many options to show, whether code ever appears. They never change what
+the process requires. Three answers each, no "you decide".
+
+0a. **How technical are you?**
+    Never written code · I understand how apps work but don't code · I can read code.
+0b. **How familiar are you with product development?**
+    Never written a PRD · Worked alongside product managers · I am a product manager.
+    Record both in the owner profile block of CLAUDE.md (passed to the stamping script as
+    `TECH_LEVEL` and `PRODUCT_LEVEL`). The behaviour each answer buys is in workflow.md,
+    "How Claude talks to the owner".
+
 1. **What is the project called?**
    Example: "Orbit" or "Family Meal Planner". A working name is fine; it can change.
 

@@ -13,6 +13,10 @@ setup task if they need the running system.
   lost or seen, and on money, are the usual sources. Format:
   `- Payment records are append-only, never edited or deleted → infra.md (Data model)`.
   The template already says the reasoning lives in the decisions log; put it in D-003.
+- Owner profile: the two interview answers, stamped as `TECH_LEVEL` and `PRODUCT_LEVEL`. Use
+  the owner's own words if they gave a fuller answer ("I built a Shopify store once") rather
+  than forcing the three labels; the table in workflow.md is read by column, and a fresh session
+  can map a sentence to a column.
 - Directory map: keep as is; it describes the scaffold accurately.
 
 ## docs/vision.md

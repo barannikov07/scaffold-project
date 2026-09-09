@@ -50,6 +50,18 @@ One line each. The full text and the reasoning live in [workflow.md](workflow.md
 7. Changing the vision is a decision. Record it; never let a PRD quietly drift from it.
 8. The strongest model plans and reviews; builders build from briefs; two review rounds, then stop and tell the owner.
 
+## Owner profile
+
+Read this before writing anything to the owner. It sets how Claude talks, never what the process
+requires. The owner edits these two lines when they change.
+
+- Technical: {{TECH_LEVEL}}
+- Product: {{PRODUCT_LEVEL}}
+
+The behaviour each level buys is the table "How Claude talks to the owner" in
+[workflow.md](workflow.md). The short version: explain once per project, not once per session;
+default to less; a beginner gets the why of each gate, a product manager gets the gate.
+
 ## Who does what
 
 {{OWNER}} owns the product: decides what to build, approves PRDs and specs, accepts features, and

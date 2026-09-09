@@ -5,7 +5,9 @@ description: Report where the project stands: milestones done and remaining, wha
 
 # Status
 
-Produce a short spoken summary from the documents. Store nothing; the documents are the source
+Produce a short spoken summary from the documents.
+Calibrate every message to the owner profile in `CLAUDE.md` (see workflow.md, "How Claude
+talks to the owner"): explain once per project, default to less. Store nothing; the documents are the source
 of truth and this command only reads them.
 
 Read `docs/roadmap.md`, `docs/product-index.md`, and search every document for `TBD(`.

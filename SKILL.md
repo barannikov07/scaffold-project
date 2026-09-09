@@ -29,7 +29,9 @@ answer and a "you decide" option. Do not ask for a "stack"; ask what the product
 whether people sign in, whether it stores data, whether money moves, and what the first thing to
 build is. You translate those answers into technical choices, not the owner.
 
-Roughly eight questions. Stop early if the owner gives you everything in one go.
+Roughly eight questions, plus two at the start about the owner: how technical they are and how
+familiar with product work. Those two set the explanation depth for the whole project and go
+into the owner profile in CLAUDE.md. Stop early if the owner gives you everything in one go.
 
 ### 3. Decide the stack and state it back
 
@@ -54,6 +56,8 @@ python3 <skill-dir>/scripts/scaffold.py --target <project-dir> \
   --set PROJECT_NAME="..." --set PURPOSE="..." --set OWNER="..." \
   --set FRAMEWORK="..." --set DATABASE="..." --set AUTH="..." --set HOSTING="..." \
   --set FIRST_FEATURE_NAME="..." --set FIRST_FEATURE_SLUG="..." \
+  --set TECH_LEVEL="never coded | understands, doesn't code | reads code" \
+  --set PRODUCT_LEVEL="new to product work | worked with PMs | product manager" \
   --set TRIPWIRES="- <invariant> → infra.md (<section>)
 - <invariant> → infra.md (<section>)"
 ```
@@ -116,6 +120,9 @@ as the new-feature flow describes.
 - Plain language first. Each section that carries technical detail opens with one sentence a
   non-technical owner understands, then the detail. Technical terms get a short gloss in
   parentheses the first time they appear in a file.
+- Calibrate to the owner profile from the moment it is known, including during this scaffold.
+  A beginner gets the "why" of each step once; a product manager gets the step and the question.
+  Overexplaining to a senior owner is as much a failure as underexplaining to a beginner.
 - Who does what is explicit. The owner decides, approves, accepts, and releases. Claude drafts,
   builds, verifies, and keeps docs true. Say which is which wherever a step needs a person.
 - Quality bars stay in the files. Each template ends with a "Before this passes" checklist. Leave

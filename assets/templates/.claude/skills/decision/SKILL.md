@@ -5,7 +5,9 @@ description: Record a decision in the append-only decisions log with its reasoni
 
 # Decision
 
-Append one entry to `docs/decisions.md`. Never edit or delete an existing entry; a reversal is a
+Append one entry to `docs/decisions.md`.
+Calibrate every message to the owner profile in `CLAUDE.md` (see workflow.md, "How Claude
+talks to the owner"): explain once per project, default to less. Never edit or delete an existing entry; a reversal is a
 new entry that marks the old one "Superseded by D-nnn".
 
 ## Entry

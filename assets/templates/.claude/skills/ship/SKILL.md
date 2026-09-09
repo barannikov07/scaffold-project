@@ -5,7 +5,9 @@ description: Take a built feature through QA, release, and close: verify locally
 
 # Ship
 
-Move one feature from Build through QA → Release → Close as defined in `workflow.md`. The owner
+Move one feature from Build through QA → Release → Close as defined in `workflow.md`.
+Calibrate every message to the owner profile in `CLAUDE.md` (see workflow.md, "How Claude
+talks to the owner"): explain once per project, default to less. The owner
 has two decisions here: accepting the feature and approving the release. Everything else is yours.
 
 ## 1. Verify (the orchestrator)

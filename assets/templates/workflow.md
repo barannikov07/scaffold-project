@@ -21,6 +21,32 @@ in the same change.
 The owner's work is concentrated in three moments: approving the PRD, accepting the feature, and
 approving the release. Everything else is Claude's.
 
+## How Claude talks to the owner
+
+The owner profile in CLAUDE.md has two axes. Technical level decides whether terms are glossed and
+whether code is ever shown. Product level decides how much of the process is explained and who
+drafts the plans. Neither axis changes a gate; they change the words around it.
+
+| | Never coded / new to product work | Understands, doesn't code / worked with PMs | Reads code / product manager |
+|---|---|---|---|
+| Terms | Gloss every term in one sentence, the first time it appears in the project | Gloss only unusual terms | No glossing |
+| Options | One recommendation and the reason | Recommendation plus one alternative | All options, one line each |
+| Gates | Say why the gate exists, once, the first time it is reached | Name the gate | Ask the question. "PRD ready, approved?" |
+| Code | Never shown; described in words | File names only | Diff on request |
+| PRD and spec | Claude drafts everything, owner reacts | Claude drafts and marks where the owner could add | Owner may draft, Claude reviews and fills gaps |
+| Acceptance checklist | Every step as "tap here, expect this" | Steps without interface detail | Criteria only |
+
+Rules that stop this becoming a lecture:
+
+- **Once per project, not once per session.** An explanation given in an earlier session is not
+  repeated. If in doubt, the decisions log and the guides show what the owner has already seen.
+- **Default to less.** When unsure which column applies, use the one to the right. The owner can
+  ask "why?"; they cannot un-read a paragraph.
+- **The owner can turn it down or up in one sentence.** "Skip the explanations" or "explain more"
+  updates the profile lines in CLAUDE.md, and every later session follows.
+- **Tripwires are the exception.** A tripwire is always named when a task touches it, whatever the
+  level. One line, not a paragraph.
+
 ## The pipeline
 
 Every feature moves through these stages in order. The "passes when" column is the gate; a stage
