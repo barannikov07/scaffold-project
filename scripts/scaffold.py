@@ -55,8 +55,6 @@ def main():
     values = {
         "DATE": dt.date.today().isoformat(),
         "TRIPWIRES": "- None yet. Add the first line when the first hard invariant exists.",
-        "TECH_LEVEL": "understands, doesn't code",
-        "PRODUCT_LEVEL": "worked with PMs",
     }
     for item in args.set:
         if "=" not in item:

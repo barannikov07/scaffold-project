@@ -1,6 +1,6 @@
 ---
 name: scaffold-project
-description: Scaffold a brand-new project's documentation and product process the way a top-tier product builder at a top-tier company would, for a non-technical owner who builds with Claude. Docs and process only, no application code. Interviews the owner in plain language, then creates the router CLAUDE.md, vision, roadmap, product index, decisions log, workflow (idea → assess → PRD → spec → migrate → build → QA → release → close), infra.md, PR checklist, PRD/spec/guide templates, and project commands (/new-feature, /ship, /status, /decision), commits them in one commit, and moves straight into the first PRD. Use this whenever the user wants to start a new project, app, product, or repository from scratch, or asks to "scaffold", "bootstrap", "set up the docs", "set up the process", "kick off a new project", or wants a vision doc, roadmap, or PRD for something that does not exist yet, even if they never say the word scaffold.
+description: Scaffold a brand-new project's documentation and product process the way a top-tier product builder at a top-tier company would, for a non-technical owner who builds with Claude. Docs and process only, no application code. Interviews the owner in plain language, then creates the router AGENTS.md, vision, roadmap, product index, decisions log, workflow (idea → assess → PRD → spec → migrate → build → QA → release → close), infra.md, PR checklist, PRD/spec/guide templates, and the /new-feature, /ship, /status, /decision playbooks for Claude Code and Codex, commits them in one commit, and moves straight into the first PRD. Use this whenever the user wants to start a new project, app, product, or repository from scratch, or asks to "scaffold", "bootstrap", "set up the docs", "set up the process", "kick off a new project", or wants a vision doc, roadmap, or PRD for something that does not exist yet, even if they never say the word scaffold.
 ---
 
 # Scaffold a project
@@ -31,7 +31,7 @@ build is. You translate those answers into technical choices, not the owner.
 
 Roughly eight questions, plus two at the start about the owner: how technical they are and how
 familiar with product work. Those two set the explanation depth for the whole project and go
-into the owner profile in CLAUDE.md. Stop early if the owner gives you everything in one go.
+into the owner profile in AGENTS.md. Stop early if the owner gives you everything in one go.
 
 ### 3. Decide the stack and state it back
 
@@ -83,7 +83,7 @@ The templates carry structure and quality bars; you supply the substance. Follow
   are one-liners and have nowhere else to hold the why).
 - `infra.md`: stack, environments, the accounts the owner will need, env var names for the chosen
   stack. Data model and key flows stay as placeholders for the tech setup task.
-- `CLAUDE.md`: the map paragraph and directory map. Check the tripwire block reads well and
+- `AGENTS.md`: the map paragraph and directory map. Check the tripwire block reads well and
   points at the right `infra.md` sections.
 
 Never invent facts. A TBD is written as `TBD(owner): <the question>` so it can be found and
@@ -102,16 +102,16 @@ Do not push. Pushing needs a remote the owner has to create.
 
 ### 8. Hand off and start the first PRD
 
-Tell the owner, in this order:
+Tell the owner, in this order, then wait for their reaction to the vision before drafting the
+PRD (the vision-fit section depends on it):
 
 1. What was created, in three or four sentences.
 2. The human-only checklist from `docs/products/tech-setup/checklist.md`: accounts to create,
    the GitHub repository, the hosting connection. You cannot do these for them.
 3. That the next step is the PRD for the first feature, and that you are starting it now.
 
-Then run the new-feature flow from the freshly created `.claude/skills/new-feature/SKILL.md`
-for the first feature. The vision draft is the prism; if the owner has not reacted to the vision
-yet, get that reaction first, because the PRD's vision-fit section depends on it. The PRD draft
+Then run the new-feature flow from the freshly created `docs/playbooks/new-feature.md`
+for the first feature, with the reacted-to vision as the prism. The PRD draft
 stays uncommitted until the owner approves it; approved plans are committed straight to `main`,
 as the new-feature flow describes.
 
@@ -133,7 +133,7 @@ as the new-feature flow describes.
 
 - Every placeholder is filled or converted to a `TBD(owner):` line. Search for `{{` outside
   `docs/products/_template/` to be sure; that folder keeps its placeholders on purpose.
-- `CLAUDE.md` links resolve to files that exist.
+- `AGENTS.md` links resolve to files that exist.
 - The product index, roadmap, and decisions log agree with each other.
 - One commit exists on `main` with the message above.
 - The owner has the human-only checklist and knows the first PRD is starting.

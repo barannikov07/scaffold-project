@@ -18,9 +18,9 @@ not to write code themselves. That changes three things:
 
 ## Five principles the generated docs must obey
 
-1. **CLAUDE.md is a router, not an encyclopedia.** It is a map with pointers, tripwires, and rules
+1. **AGENTS.md is a router, not an encyclopedia.** It is a map with pointers, tripwires, and rules
    of the road. Every fact lives in exactly one document; everything else links to it. A
-   CLAUDE.md that repeats facts drifts the moment one copy changes.
+   AGENTS.md that repeats facts drifts the moment one copy changes.
 2. **Records are kept, guides are living, the roadmap is fluid.** A feature's PRD and spec are
    drafts until its build starts; from then on they are a record of what was agreed and are not
    edited to match reality. Guides carry current truth and must match reality at every merge.
@@ -32,7 +32,7 @@ not to write code themselves. That changes three things:
 3. **Done includes docs.** Nothing merges until the guide, product index, and roadmap reflect the
    change. It is a merge requirement, not a courtesy. Docs updated "later" are docs never updated.
 4. **Tripwires over tribal knowledge.** Every hard invariant (immutable records, append-only
-   integrations, privacy boundaries, money rules) gets one line in CLAUDE.md pointing to the
+   integrations, privacy boundaries, money rules) gets one line in AGENTS.md pointing to the
    owning doc. The list only grows. A fresh session reads the tripwires before touching anything.
 5. **Small reversible steps.** Short-lived branches, additive migrations, one feature per pull
    request. Rollback is reverting one merge commit.
@@ -64,7 +64,7 @@ view with their dates and total progress is visible at a glance. The first row n
 "now". PRDs are written just in time, one milestone ahead at most, so later milestones stay cheap
 one-liners that learnings can reshape.
 
-The vision is a prism, not decoration. Three mechanisms make it bite: CLAUDE.md sends every
+The vision is a prism, not decoration. Three mechanisms make it bite: AGENTS.md sends every
 assess or PRD task to it first; every PRD has a mandatory vision-fit section; and a conflict
 between a PRD and the vision is resolved by dropping the PRD or by recording a decision that
 amends the vision, never by silently ignoring it.

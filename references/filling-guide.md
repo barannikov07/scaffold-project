@@ -5,7 +5,7 @@ Go file by file. Where the interview gave nothing, leave the `TBD(owner):` line 
 not invent. The `TBD(claude):` lines are yours to fill now if you can, or to leave for the tech
 setup task if they need the running system.
 
-## CLAUDE.md
+## AGENTS.md
 
 - The purpose line is the owner's one-sentence answer, lightly edited.
 - Tripwires are passed to the stamping script as `TRIPWIRES`, one line each, and the script
@@ -35,7 +35,10 @@ comes from the follow-up "what would make it worth building?".
 - Milestone 1's "done when" is one observable sentence, the same as the first success criterion
   you expect the PRD to carry.
 - Add milestones 2 and up only if the owner described them, including capabilities named in
-  their end-state answer. One line each, status Later, Features column empty, no PRD links.
+  their end-state answer. One line each, status Later, Features and Shipped columns empty. The
+  "Done when" column is filled even for Later rows, since it is what makes the milestone a
+  milestone rather than a wish. Example row:
+  `| 2 | Attendance record | Who actually turned up is recorded and cannot be changed afterwards | Later | | |`
 
 ## docs/product-index.md
 
@@ -77,4 +80,4 @@ actually do today.
 - Milestone rows in the roadmap match feature rows in the index (names, numbers, links).
 - The decision IDs cited in the vision changelog and roadmap changes exist in the log.
 - Every `{{` is gone. Every remaining `TBD(` has an owner and a question.
-- Every relative link in CLAUDE.md, the index, and the roadmap resolves.
+- Every relative link in AGENTS.md, the index, and the roadmap resolves.

@@ -209,14 +209,14 @@
         <div class="tabs" role="tablist" id="tabs"></div>
         <div id="excerpts">
           <div class="excerpt" data-k="CLAUDE.md" role="tabpanel">
-            <div class="path">CLAUDE.md · a map, not a manual</div>
+            <div class="path">AGENTS.md · a map, not a manual · CLAUDE.md is a one-line import of it</div>
             <p><strong>Tripwires.</strong> Hard rules that must never break, one line each, pointing to the document that owns the detail. The owner named the first two in the interview; the third followed from "fees, eventually".</p>
             <ul class="tw">
               <li>Attendance records are append-only: never edited or deleted once a rehearsal has happened <span>→ infra.md (Data model)</span></li>
               <li>A singer never sees another singer's phone number or email address <span>→ infra.md (Roles inside the app)</span></li>
               <li>Membership fees go through Stripe; card details are never stored by us <span>→ infra.md (External services)</span></li>
             </ul>
-            <p style="color:var(--ink-3);font-size:.85rem">Plus a "read before working" table (task → document), eight golden rules that point to workflow.md, and the directory map. Nothing else. Detail lives in the documents it points to.</p>
+            <p style="color:var(--ink-3);font-size:.85rem">Plus a "read before working" table (task → document), eight golden rules that point to workflow.md, the owner profile, and the directory map. Nothing else. Detail lives in the documents it points to.</p>
           </div>
           <div class="excerpt" data-k="docs/vision.md" role="tabpanel" hidden>
             <div class="path">docs/vision.md · the prism every PRD is checked against</div>
@@ -559,18 +559,18 @@ sequenceDiagram
 
   /* file tree */
   const files = [
-    ['CLAUDE.md','hot'],['workflow.md',''],['infra.md','hot'],['.gitignore',''],
+    ['AGENTS.md','hot'],['CLAUDE.md  → @AGENTS.md',''],['workflow.md',''],['infra.md','hot'],['.gitignore',''],
     ['.github/','dir'],['  pull_request_template.md',''],
-    ['.claude/skills/','dir'],['  new-feature/SKILL.md',''],['  ship/SKILL.md',''],['  status/SKILL.md',''],['  decision/SKILL.md',''],
+    ['.claude/skills/','dir'],['  new-feature · ship · status · decision',''],['.codex/skills/','dir'],['  same four, for Codex',''],['docs/playbooks/','dir'],['  the four commands, canonical',''],
     ['docs/','dir'],['  vision.md','hot'],['  roadmap.md','hot'],['  product-index.md',''],['  decisions.md','hot'],
     ['  products/','dir'],['    _template/  prd.md · spec.md · guide.md',''],['    tech-setup/  checklist.md · guide.md',''],['    rehearsal-rsvp/  prd.md · spec.md · guide.md','hot'],
   ];
-  const keyFor = { 'CLAUDE.md':'CLAUDE.md', 'infra.md':'infra.md', '  vision.md':'docs/vision.md', '  roadmap.md':'docs/roadmap.md', '  decisions.md':'docs/decisions.md', '    rehearsal-rsvp/  prd.md · spec.md · guide.md':'docs/products/rehearsal-rsvp/prd.md' };
+  const keyFor = { 'AGENTS.md':'CLAUDE.md', 'infra.md':'infra.md', '  vision.md':'docs/vision.md', '  roadmap.md':'docs/roadmap.md', '  decisions.md':'docs/decisions.md', '    rehearsal-rsvp/  prd.md · spec.md · guide.md':'docs/products/rehearsal-rsvp/prd.md' };
   const tree = document.getElementById('tree');
   files.forEach((f, i) => { const s = document.createElement('span'); s.className = 'f ' + f[1]; s.textContent = f[0]; s.style.transitionDelay = (i * 60) + 'ms'; s.setAttribute('role','listitem'); if (keyFor[f[0]]) { s.style.cursor = 'pointer'; s.addEventListener('click', () => select(keyFor[f[0]])); } tree.appendChild(s); });
 
   const panels = Array.from(document.querySelectorAll('#excerpts .excerpt')), tabs = document.getElementById('tabs');
-  panels.forEach(p => { const b = document.createElement('button'); b.className = 'tab'; b.type = 'button'; b.role = 'tab'; b.textContent = p.dataset.k.replace('docs/products/rehearsal-rsvp/','products/…/'); b.dataset.k = p.dataset.k; b.addEventListener('click', () => select(p.dataset.k)); tabs.appendChild(b); });
+  panels.forEach(p => { const b = document.createElement('button'); b.className = 'tab'; b.type = 'button'; b.role = 'tab'; b.textContent = p.dataset.k.replace('docs/products/rehearsal-rsvp/','products/…/').replace('CLAUDE.md','AGENTS.md'); b.dataset.k = p.dataset.k; b.addEventListener('click', () => select(p.dataset.k)); tabs.appendChild(b); });
   function select(k){
     panels.forEach(p => p.hidden = p.dataset.k !== k);
     tabs.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.k === k));

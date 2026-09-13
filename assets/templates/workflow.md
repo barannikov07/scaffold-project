@@ -1,7 +1,7 @@
 # How work flows in {{PROJECT_NAME}}
 
-This document governs all feature work. Claude follows it; {{OWNER}} decides at the gates. If a
-situation is not covered here, the golden rules in CLAUDE.md decide, and the gap gets fixed here
+This document governs all feature work. The agent (Claude Code, Codex, or any other) follows it; {{OWNER}} decides at the gates. If a
+situation is not covered here, the golden rules in AGENTS.md decide, and the gap gets fixed here
 in the same change.
 
 ## Who does what
@@ -23,7 +23,7 @@ approving the release. Everything else is Claude's.
 
 ## How Claude talks to the owner
 
-The owner profile in CLAUDE.md has two axes. Technical level decides whether terms are glossed and
+The owner profile in AGENTS.md has two axes. Technical level decides whether terms are glossed and
 whether code is ever shown. Product level decides how much of the process is explained and who
 drafts the plans. Neither axis changes a gate; they change the words around it.
 
@@ -43,7 +43,7 @@ Rules that stop this becoming a lecture:
 - **Default to less.** When unsure which column applies, use the one to the right. The owner can
   ask "why?"; they cannot un-read a paragraph.
 - **The owner can turn it down or up in one sentence.** "Skip the explanations" or "explain more"
-  updates the profile lines in CLAUDE.md, and every later session follows.
+  updates the profile lines in AGENTS.md, and every later session follows.
 - **Tripwires are the exception.** A tripwire is always named when a task touches it, whatever the
   level. One line, not a paragraph.
 
@@ -116,12 +116,14 @@ Thinking and building are different jobs and deserve different models. The most 
 available acts as the **orchestrator**: it interviews, assesses, writes the PRD and the spec,
 splits the work, reviews the code, and decides what ships. Faster, cheaper models act as
 **builders**: each takes one self-contained work item and implements it. The owner only ever
-talks to the orchestrator.
+talks to the orchestrator. This works in any agent: in Claude Code the orchestrator spawns
+builders as sub-agents; in an agent without sub-agents, the orchestrator builds the work items
+itself, one at a time, and still reviews each against the spec before starting the next.
 
 | Role | Model tier | Does | Never does |
 |---|---|---|---|
-| Orchestrator | The strongest model available (Fable or Opus tier) | Plans, writes PRD and spec, splits work into items, briefs builders, reviews every diff against the spec, fixes docs, ships | Trusts a builder's own report of success |
-| Builder | A fast model (Sonnet tier, or Opus for hard items) | Implements one work item from its brief on a branch or worktree, runs the tests it was given, reports what it changed | Touches files outside its brief, changes the spec, merges |
+| Orchestrator | The strongest model available (Claude Opus or Fable, GPT-5 class with high reasoning) | Plans, writes PRD and spec, splits work into items, briefs builders, reviews every diff against the spec, fixes docs, ships | Trusts a builder's own report of success |
+| Builder | A fast model (Claude Sonnet, a GPT-5 mini class model; the strong model for hard items) | Implements one work item from its brief on a branch or worktree, runs the tests it was given, reports what it changed | Touches files outside its brief, changes the spec, merges |
 
 The loop, for every Full-size feature:
 

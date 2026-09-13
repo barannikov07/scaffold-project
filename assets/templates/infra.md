@@ -75,7 +75,7 @@ erDiagram
 ```
 
 - Schema file: TBD(claude): path, created during tech setup
-- Immutable or append-only records: TBD(owner): none yet, or list them; each one is also a tripwire in CLAUDE.md
+- Immutable or append-only records: TBD(owner): none yet, or list them; each one is also a tripwire in AGENTS.md
 
 ## Key flows
 

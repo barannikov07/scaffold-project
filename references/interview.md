@@ -18,7 +18,7 @@ the process requires. Three answers each, no "you decide".
     Never written code · I understand how apps work but don't code · I can read code.
 0b. **How familiar are you with product development?**
     Never written a PRD · Worked alongside product managers · I am a product manager.
-    Record both in the owner profile block of CLAUDE.md (passed to the stamping script as
+    Record both in the owner profile block of AGENTS.md (passed to the stamping script as
     `TECH_LEVEL` and `PRODUCT_LEVEL`). The behaviour each answer buys is in workflow.md,
     "How Claude talks to the owner".
 
@@ -27,7 +27,7 @@ the process requires. Three answers each, no "you decide".
 
 2. **In one sentence, what will it do for whom?**
    Example: "Helps small landlords track rent payments and send reminders."
-   This sentence becomes the purpose line in CLAUDE.md and the seed of the vision.
+   This sentence becomes the purpose line in AGENTS.md and the seed of the vision.
 
 3. **When this is finished and working perfectly, what exists? Describe the end state.**
    Example: "Every tenant pays through the app, landlords never chase anyone, and taxes are
