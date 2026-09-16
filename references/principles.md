@@ -47,6 +47,31 @@ the plan is wrong, not the builders, and the owner hears about it. This keeps qu
 matters (judgment) and cost where it does not (typing), and it is why the spec template has a
 "Work items" section.
 
+## Design is a gate, not a garnish
+
+A non-technical owner cannot approve a paragraph about a screen; they can approve a picture. So
+every feature with a screen goes through a Design stage that produces static HTML mockups built
+on a project design system, and the owner's approval is of the mockup. The build must match it.
+The design system exists so that every screen looks like the same product and so that "make it
+beautiful" is a set of tokens and rules a fresh session can follow, not a hope.
+
+## AI in the product removes a step
+
+An applied-AI pass runs on every PRD draft, because the owner will not know what is possible and
+the agent will not volunteer it unless asked. The rule that keeps it honest: a proposal must
+remove a step from the user's flow or a decision from the owner's plate, name the gain, respect
+the tripwires (propose, confirm, act), and keep the manual path. Chosen, deferred, and rejected
+proposals are all recorded so nothing is re-proposed. This is AI inside the product; the agent
+building the product is a different subject (orchestrator and builders).
+
+## QA and security are playbooks, not hopes
+
+"Tested" means every line executed with evidence in a recorded run; "secure" means every denial
+has an enforcing rule that was tested. Both are playbooks the spine calls at fixed points,
+driven by tags set at Assess, so they happen without anyone remembering. They prefer stronger
+built-in skills when the agent has them and fall back to their own checklists when not, so the
+process is complete on any agent and better on the agents that have more.
+
 ## The planning stack: four altitudes
 
 Progress tracking fails when one document tries to hold plan, status, history, and reasoning at

@@ -1,6 +1,6 @@
 ---
 name: scaffold-project
-description: Scaffold a brand-new project's documentation and product process the way a top-tier product builder at a top-tier company would, for a non-technical owner who builds with Claude. Docs and process only, no application code. Interviews the owner in plain language, then creates the router AGENTS.md, vision, roadmap, product index, decisions log, workflow (idea → assess → PRD → spec → migrate → build → QA → release → close), infra.md, PR checklist, PRD/spec/guide templates, and the /new-feature, /ship, /status, /decision playbooks for Claude Code and Codex, commits them in one commit, and moves straight into the first PRD. Use this whenever the user wants to start a new project, app, product, or repository from scratch, or asks to "scaffold", "bootstrap", "set up the docs", "set up the process", "kick off a new project", or wants a vision doc, roadmap, or PRD for something that does not exist yet, even if they never say the word scaffold.
+description: Scaffold a brand-new project's documentation and product process the way a top-tier product builder at a top-tier company would, for a non-technical owner who builds with an AI coding agent (Claude Code or Codex). Docs and process only, no application code. Interviews the owner in plain language, then creates the router AGENTS.md (with a CLAUDE.md import for Claude Code), vision, roadmap, product index, decisions log, a ten-stage workflow (idea → assess → PRD → design → spec → migrate → build → QA → release → close), infra.md, a design system and mockup base, a QA regression list, PRD/design/spec/guide templates, a PR checklist, and eight playbooks for both agents (/new-feature, /ship, /status, /decision plus the specialists /design, /ai-native, /qa, /security that the spine calls at fixed points), commits them in one commit, and moves straight into the first PRD. Use this whenever the user wants to start a new project, app, product, or repository from scratch, or asks to "scaffold", "bootstrap", "set up the docs", "set up the process", "kick off a new project", or wants a vision doc, roadmap, or PRD for something that does not exist yet, even if they never say the word scaffold.
 ---
 
 # Scaffold a project
@@ -31,7 +31,9 @@ build is. You translate those answers into technical choices, not the owner.
 
 Roughly eight questions, plus two at the start about the owner: how technical they are and how
 familiar with product work. Those two set the explanation depth for the whole project and go
-into the owner profile in AGENTS.md. Stop early if the owner gives you everything in one go.
+into the owner profile in AGENTS.md. One more near the end asks what is most tedious today; it
+seeds the first PRD's problem and the first applied-AI proposals. Stop early if the owner gives
+you everything in one go.
 
 ### 3. Decide the stack and state it back
 
@@ -108,7 +110,10 @@ PRD (the vision-fit section depends on it):
 1. What was created, in three or four sentences.
 2. The human-only checklist from `docs/products/tech-setup/checklist.md`: accounts to create,
    the GitHub repository, the hosting connection. You cannot do these for them.
-3. That the next step is the PRD for the first feature, and that you are starting it now.
+3. That the next step is the PRD for the first feature, and that you are starting it now. Say
+   in one sentence what the flow after the PRD looks like: an applied-AI pass on the draft, a
+   design stage with mockups they will open in a browser if the feature has a screen, then the
+   spec. Once per project, calibrated to the profile.
 
 Then run the new-feature flow from the freshly created `docs/playbooks/new-feature.md`
 for the first feature, with the reacted-to vision as the prism. The PRD draft
@@ -135,5 +140,7 @@ as the new-feature flow describes.
   `docs/products/_template/` to be sure; that folder keeps its placeholders on purpose.
 - `AGENTS.md` links resolve to files that exist.
 - The product index, roadmap, and decisions log agree with each other.
+- `docs/design/system.md` and `docs/qa/regression.md` exist as stamped templates; nothing in
+  them is invented. The design system is filled at the first feature with a screen.
 - One commit exists on `main` with the message above.
 - The owner has the human-only checklist and knows the first PRD is starting.

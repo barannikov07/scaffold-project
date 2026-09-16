@@ -26,6 +26,7 @@ with no product logic.
 - [ ] Connect the database and sign-in. Record the schema file path in `infra.md` (Data model).
 - [ ] Create the QA seam: a localhost-only test login and a seeded test user with obviously-marked test data. Record both in `infra.md` (Test identities). Confirm the test login cannot exist in production builds.
 - [ ] Create the verify script (one command that checks the build passes and the documentation rules hold: index rows link to existing files, guide changed when source changed, no secret patterns in the diff). Document how to run it in `workflow.md` if the command differs from the default.
+- [ ] Security baseline per `docs/playbooks/security.md`: secrets only in the host and `.env.local` with none in repository history, row-level rules default-deny, sign-in expiry, HTTPS and headers, backups on with a restore tried, dependency audit in the verify script, no personal data in logs. Record evidence in `infra.md` (Security baseline).
 - [ ] Push to GitHub, confirm {{HOSTING}} deploys `main`, and walk the live site once.
 - [ ] Draw the real sign-in sequence diagram and the initial entity diagram in `infra.md`.
 - [ ] Fill `infra.md` Operations: where logs are, how backups work.
@@ -37,4 +38,5 @@ with no product logic.
 - [ ] The production URL shows the same page
 - [ ] Test login works locally and is absent from the production build
 - [ ] Verify script passes
+- [ ] Security baseline in `infra.md` ticked with evidence
 - [ ] `infra.md` has no `TBD(claude)` left in Stack, Environments, Identities, or Operations

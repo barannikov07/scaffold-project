@@ -55,6 +55,20 @@ Who can do what, and where the keys live. Never values, only names and owners.
 | Localhost test login | Local only, never in production builds | Lets Claude and the owner sign in without a real account |
 | Seeded test user | Local and, once created, production under a `TEST-` marker | The only identity QA may write with once real data exists |
 
+### Security baseline
+
+Filled during tech setup from the security playbook. Each line carries evidence, not a promise.
+
+| Control | Status | Evidence |
+|---|---|---|
+| Secrets only in host settings and `.env.local`; none in repository history | TBD(claude) | |
+| Row-level rules on every table, default deny; server key never in the browser | TBD(claude) | |
+| Sign-in expiry configured; test login absent from production builds | TBD(claude) | |
+| HTTPS only; security headers set | TBD(claude) | |
+| Backups on; restore tried once | TBD(claude) | |
+| Dependency audit in the verify script | TBD(claude) | |
+| No personal data in logs | TBD(claude) | |
+
 ### Environment variables
 
 Names only. Values live in `.env.local` (gitignored) and in the host's environment settings.
@@ -98,6 +112,7 @@ What the system depends on and what happens when each one is down.
 | Service | Used for | If it is down |
 |---|---|---|
 | TBD(claude): fill as integrations are added | | |
+| AI model provider, if any feature has an AI component | TBD(claude): chosen at the first AI component, recorded as a decision | The feature degrades to its manual path |
 
 ## Operations
 

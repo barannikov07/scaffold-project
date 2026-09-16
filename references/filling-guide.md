@@ -26,7 +26,10 @@ the hand-off that it is a first draft for them to react to. The end state comes 
 push it to the ambitious version. Principles are the trade-off rules you heard between the lines
 ("must be simple for tenants", "never lose a payment"). Non-goals are what the owner said they do
 not want, plus one or two obvious temptations you would rule out. "How we know we have won"
-comes from the follow-up "what would make it worth building?".
+comes from the follow-up "what would make it worth building?". If the owner's answers describe a
+workflow full of tedious steps, propose one principle of the form "the app does the tedious part;
+the person keeps the decision", and mark it as a suggestion; it is what makes the applied-AI
+pass fit the vision later.
 
 ## docs/roadmap.md
 
@@ -42,7 +45,8 @@ comes from the follow-up "what would make it worth building?".
 
 ## docs/product-index.md
 
-Two rows. The first feature's purpose is one line. Both rows Planned. Leave PRD, spec, and
+Two rows. The first feature's purpose is one line. Both rows Planned. The Tags column for the
+first feature stays TBD until Assess sets has-UI and the risk tags; do not guess it. Leave PRD, spec, and
 guide links pointing at the stamped files; they exist.
 
 ## docs/decisions.md
@@ -61,6 +65,12 @@ Roles inside the app (from the users question), and the tripwire-related lines u
 Environment variable names: fill them if you know the stack's standard names (for Supabase and
 Next.js you do), otherwise leave the TBD for tech setup. Diagrams and the Operations section
 (logs, backups) stay as `TBD(claude)` for the tech setup task; they need the running system.
+
+## docs/design/system.md and docs/qa/regression.md
+
+Leave both as stamped. The design system is filled by the design playbook, with the owner, at the
+first feature that has a screen; guessing a palette now would be invented. The regression list
+is empty until the first feature ships.
 
 ## docs/products/<first-feature>/prd.md
 

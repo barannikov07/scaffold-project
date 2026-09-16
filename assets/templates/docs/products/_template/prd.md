@@ -11,7 +11,8 @@ records it; if you change your mind, that is a new PRD in this folder, not an ed
 | | |
 |---|---|
 | Size | Full |
-| Risk tags | none / money / privacy / data loss / external service |
+| Has UI | yes / no |
+| Risk tags | none / money / privacy / sign-in / external service |
 | Depends on | |
 | Decision | go / later / no, by the owner, with the date |
 
@@ -62,6 +63,16 @@ it becomes the owner's acceptance checklist in QA.
 
 - 
 
+## AI opportunities
+
+Filled by the applied-AI pass after the first draft. Every row gets a decision: chosen (now in
+Scope and Flows, with the confirmation step shown), deferred (a roadmap Later row), or rejected
+(in Non-goals with the reason).
+
+| # | Opportunity | Step it removes | Gain | Risk | Cost class | Decision |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+
 ## Open questions
 
 `TBD(owner):` lines that must be answered before approval.
@@ -70,11 +81,12 @@ it becomes the owner's acceptance checklist in QA.
 
 ## Before this passes
 
-The gate for stage 3. Claude ticks the first three when they are true; only the owner ticks the
-last two. The owner approves only when every box is ticked.
+The gate for stage 3. The agent ticks the first four when they are true; only the owner ticks
+the last two. The owner approves only when every box is ticked.
 
 - [ ] Vision fit names a specific goal or principle
 - [ ] Non-goals section has at least one real exclusion
 - [ ] Every success criterion is checkable by using the product
+- [ ] AI opportunities considered, each with a decision; chosen ones visible in Scope and Flows
 - [ ] Every open question is answered or moved to the spec as a design question
 - [ ] Owner has read it and said "approved"

@@ -6,31 +6,35 @@ strong product team would, for an owner who is not an engineer and builds with C
 It works with **Claude Code and Codex** out of the box, and with any agent that reads `AGENTS.md`.
 
 It creates **documents and process only, no application code**: the router `AGENTS.md`, a vision,
-a milestone roadmap, a product index, a decisions log, the written workflow, the technical
-knowledge base, PRD / spec / guide templates, a pull request checklist, and four project commands
-that carry the process. Then it starts the first PRD with you.
+a milestone roadmap, a product index, a decisions log, a ten-stage workflow, the technical
+knowledge base, a design system, a QA regression list, PRD / design / spec / guide templates, a
+pull request checklist, and eight playbooks that carry the process: four for the spine
+(new-feature, ship, status, decision) and four specialists the spine calls at fixed points
+(design, applied AI, QA, security). Then it starts the first PRD with you.
 
 ## See it work
 
-**[How it works → barannikov07.github.io/scaffold-project](https://barannikov07.github.io/scaffold-project/)** walks through a real run (ChoirHub, an app for a community choir): the interview replayed, the generated documents, sequence diagrams of the scaffold session and of one feature's life, the nine-stage pipeline, and the orchestrator-and-builders loop.
+**[How it works → barannikov07.github.io/scaffold-project](https://barannikov07.github.io/scaffold-project/)** walks through a real run (ChoirHub, an app for a community choir): the interview replayed, the generated documents, sequence diagrams of the scaffold session and of one feature's life, the ten-stage pipeline, and the orchestrator-and-builders loop.
 
 ## What you get
 
 ```
 AGENTS.md                     map for every future session, any agent, with tripwires and golden rules
 CLAUDE.md                     one line, @AGENTS.md, so Claude Code reads the same map
-docs/playbooks/               the four commands as plain playbooks (canonical)
-.claude/skills/ .codex/skills/ thin wrappers exposing them as /new-feature /ship /status /decision
-workflow.md                   idea → assess → PRD → spec → migrate → build → QA → release → close
-infra.md                      stack, environments, identities, data model, key flows, operations
+docs/playbooks/               eight playbooks (canonical): new-feature, ship, status, decision, design, ai-native, qa, security
+.claude/skills/ .codex/skills/ thin wrappers exposing them as slash commands in Claude Code and Codex
+workflow.md                   idea → assess → PRD → design → spec → migrate → build → QA → release → close
+infra.md                      stack, environments, identities, security baseline, data model, key flows, operations
+docs/design/system.md         design system: tokens, type, components, copy rules (living)
+docs/design/mockup-base.html  the base every mockup starts from
+docs/qa/regression.md         golden paths of every shipped feature (living)
 docs/vision.md                north star; changes only through a recorded decision
 docs/roadmap.md               one ordered milestone table: planned, delivered, next
 docs/product-index.md         one row per feature with its stage and links
 docs/decisions.md             append-only decision log, D-001 onward
-docs/products/<slug>/         prd.md (record), spec.md (record), guide.md (living)
+docs/products/<slug>/         prd.md, design.md, spec.md (records), guide.md (living), qa.md (runs), mockups/
 docs/products/tech-setup/     day-one technical setup, tracked like a feature
 .github/pull_request_template.md
-.claude/skills/               /new-feature, /ship, /status, /decision
 ```
 
 ## The ideas behind it
@@ -40,7 +44,10 @@ docs/products/tech-setup/     day-one technical setup, tracked like a feature
 - **Done includes docs.** Nothing merges until the guide, index, and roadmap reflect the change.
 - **Tripwires over tribal knowledge.** Every hard invariant gets one line in AGENTS.md pointing to its owner.
 - **Size decides ceremony.** Small changes go straight to build; anything with a new screen, table, permission, or money path gets the full path.
-- **The owner decides at three moments**: approving the PRD, accepting the feature, approving the release. Claude does the rest.
+- **The owner decides at three moments**, four when there is a screen: approving the PRD, approving the mockup, accepting the feature, approving the release. The agent does the rest.
+- **Design is a gate, not a garnish.** Anything with a screen is designed on a project design system and approved as a static HTML mockup the owner opens in a browser, before any code. The build must match it.
+- **AI in the product removes a step.** An applied-AI pass runs on every PRD draft and proposes two to four places where AI takes the tedious part (voice or paste to record, auto-mapping, drafted messages, drift signals). It proposes, a person confirms, the manual path stays.
+- **QA and security are playbooks, not hopes.** Every QA line is executed with evidence in a recorded run; risk-tagged features get a threat pass at spec and a diff checklist at QA. Both prefer stronger built-in skills when the agent has them.
 - **Calibrated to the owner.** Two interview questions set how technical and how product-savvy the owner is. A beginner gets the why of each gate once; a product manager gets the gate. The process itself never changes.
 - **Orchestrator and builders.** The strongest model plans, writes the PRD and spec, and reviews. Cheaper models build from file-scoped briefs. Two review rounds, then stop and report.
 
@@ -61,10 +68,12 @@ git clone https://github.com/barannikov07/scaffold-project.git ~/.codex/skills/s
 Then, in any empty folder, tell your agent "start a new project" or "scaffold this project".
 
 Projects it creates are agent-agnostic too: the router is `AGENTS.md`, which Codex and most agents
-read natively, and `CLAUDE.md` is a one-line import of it for Claude Code. The four commands live
+read natively, and `CLAUDE.md` is a one-line import of it for Claude Code. The playbooks live
 as plain playbooks in `docs/playbooks/` with wrappers for both `.claude/skills/` and
 `.codex/skills/`, and `AGENTS.md` maps the trigger phrases to the playbooks for any agent without
-slash commands.
+slash commands. The specialist playbooks use a stronger built-in skill when the agent has one (a
+design canvas, a security review, a code review, a skill that runs the app) and fall back to
+their own checklists when not, so the process is complete on any agent.
 
 ## How it runs
 

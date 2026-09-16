@@ -59,6 +59,12 @@ the process requires. Three answers each, no "you decide".
    version of that belongs inside the first feature or comes before it. Most first features
    need a thin "add the people" step; say so plainly and record the answer for the PRD.
 
+8b. **What is the most tedious part of this today?**
+    Example: "Counting replies in the WhatsApp group and chasing the ones who didn't answer."
+    Seeds the first PRD's problem statement and the first applied-AI proposals (see
+    `docs/playbooks/ai-native.md` in the generated project). Record it in the PRD's Problem
+    section and in the vision draft if it points at a principle.
+
 9. **Where should it run? (Optional; skip if the owner shrugs.)**
    Example: "A website" or "phone app" or "you decide". Default is a website.
 
