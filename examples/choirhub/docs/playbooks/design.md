@@ -57,16 +57,11 @@ The feature's `design.md` was stamped from the template. Fill it from the PRD's 
 One static HTML file per screen in `docs/products/<slug>/mockups/`, plus `index.html` that
 links them all with a one-line description each.
 
-- Start every file from `docs/design/mockup-base.html`. It carries the tokens as CSS variables,
-  a phone frame, and the common components (top bar, list rows, fields, segmented control,
-  confirmation card, banners, skeleton, bottom tabs, sheet, toast). Its token block is replaced
-  with the design system's values once, on the first run, so every later mockup inherits them.
-  A component needed by two screens is added to the base and to `system.md`; a one-off stays in
-  its screen.
+- Start every file from `docs/design/mockup-base.html`. It carries the tokens as CSS variables
+  and a phone frame. Its token block is replaced with the design system's values once, on the
+  first run, so every later mockup inherits them.
 - Real copy from `design.md`, real-looking data from the product's domain, never lorem ipsum.
-- One `<figure>` per state, with the state's name in the `<figcaption>` outside the phone, never
-  inside it: a label inside the frame reads as app chrome to an owner who has never seen a mockup.
-  Separate files suffixed `-empty`, `-error` are fine when one file would get long.
+- States are extra phone frames in the same file, or separate files suffixed `-empty`, `-error`.
 - No frameworks, no build step, no JavaScript beyond toggling a state. These are pictures that
   happen to be HTML; they are never imported into the app.
 - If the agent has a design canvas skill, also publish the screens there so the owner can nudge
@@ -80,12 +75,10 @@ a line here.
 1. The primary action is obvious within two seconds.
 2. The screen says where the user is and what just happened.
 3. Words match the owner's domain, not the system's ("rehearsal", not "event record").
-4. Every destructive action has an undo or a confirmation, and anything that can be created
-   can be corrected before it matters (a typo in a rehearsal is fixable before the rehearsal).
+4. Every destructive action has an undo or a confirmation.
 5. The same thing looks the same everywhere; different things look different.
 6. Errors are prevented before they are reported.
-7. Nothing requires remembering something from another screen, and every value shown on any
-   screen has a screen where it is entered. Check this across the set, not screen by screen.
+7. Nothing requires remembering something from another screen.
 8. Text is readable at arm's length on a phone; contrast meets the floor.
 9. Touch targets are big enough for a thumb.
 10. The empty state teaches what to do first.
@@ -101,8 +94,8 @@ beginner gets "tap the blue button, that is what a singer would do"; a product m
 screen list.
 
 Iterate until the owner says "approved". Record the date in `design.md`, tick the checklist, set
-the index row to stage Design, and commit the design, the mockups, the index change, the design
-system and its decision entry (first run) to `main` in one commit (`docs(<slug>): design`).
+the index row to stage Design, and commit the design and mockups to `main`
+(`docs(<slug>): design`).
 
 ## Rules
 

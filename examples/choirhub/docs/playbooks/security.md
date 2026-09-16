@@ -49,9 +49,6 @@ Fill the spec's Security section:
    with what stops them.
 6. **External services.** What each is trusted with; what happens if it is compromised or down.
 7. **Logging.** What is logged, confirming no personal data.
-8. **Inference.** What can be worked out without reading anything private: from a count (a
-   section of one singer turns "T 1" into that person's answer), a sort order, a timestamp, or an
-   absence. For each, the suppression rule or the accepted residual risk, written down.
 
 Anything here that must hold forever becomes a tripwire line in `AGENTS.md`, and anything
 surprising becomes a decision.

@@ -24,7 +24,6 @@ One paragraph: why, what was rejected and why, and what it affects.
 - If it amends the vision: edit `docs/vision.md` accordingly and add a changelog row citing the ID.
 - If it reorders or drops roadmap items: update `docs/roadmap.md` and add a Changes row.
 - If it creates a hard invariant: add a tripwire line in `AGENTS.md` pointing to the owning doc.
-- If it explains something odd in the system: add a line under `infra.md` Constraints and
-  gotchas, once the oddity exists in the system; until then the decision entry is the record.
+- If it explains something odd in the system: add a line under `infra.md` Constraints and gotchas.
 
 Confirm to the owner in one sentence what was recorded and where it is linked from.

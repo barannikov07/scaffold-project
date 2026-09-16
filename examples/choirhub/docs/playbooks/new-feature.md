@@ -64,11 +64,7 @@ index, commit to `main` (`docs(<slug>): design`).
 
 ## 4. Spec
 
-Read `infra.md` and `docs/decisions.md` first. If tech setup (milestone 0) has not shipped,
-`infra.md` is still mostly placeholders: the spec then names what `infra.md` will record (schema
-path, environment variable names, the provider) and says so, and `infra.md` itself is updated
-when the feature or the setup ships. A living document describes what exists, never a plan.
-Draft `spec.md`: data model changes (additive
+Read `infra.md` and `docs/decisions.md` first. Draft `spec.md`: data model changes (additive
 only), functions, screens named exactly as in `design.md`, permissions, AI components for any
 chosen AI item, edge cases, migration plan, work items for delegation, test plan covering every
 success criterion and every designed state, rollout and rollback. Open each technical section

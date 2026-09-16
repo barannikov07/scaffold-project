@@ -16,6 +16,14 @@ pull request checklist, and nine playbooks that carry the process: four for the 
 
 **[How it works → barannikov07.github.io/scaffold-project](https://barannikov07.github.io/scaffold-project/)** walks through a real run (ChoirHub, an app for a community choir): the interview replayed, the generated documents, sequence diagrams of the scaffold session and of one feature's life, the ten-stage pipeline, and the orchestrator-and-builders loop.
 
+## Read a finished example
+
+[`examples/choirhub`](examples/choirhub) is a full run on a community-choir app, left where a real
+project pauses for its owner: vision, roadmap, decisions, a PRD with the applied-AI pass, a design
+system and HTML mockups, and a spec with the security threat pass and the CTO pass. Start with
+[`examples/choirhub/CONVERSATION.md`](examples/choirhub/CONVERSATION.md), which is everything the
+owner would have seen.
+
 ## What you get
 
 ```

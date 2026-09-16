@@ -43,13 +43,8 @@ Fill the PRD's "AI opportunities" table with every candidate and a decision colu
 - **Chosen** items go into Scope and into the Flows, with the human confirmation step shown.
   Success criteria gain a measurable line ("a rehearsal is created from a pasted message in under
   ten seconds, with the conductor confirming once").
-- **Deferred** items become one line in the roadmap's "Later (unordered ideas)" list with a link
-  back to this PRD. Not a milestone row and not a Changes entry; a deferral is not a decision.
+- **Deferred** items become a roadmap Later row with a link back to this PRD.
 - **Rejected** items go into Non-goals with the reason, so no future session re-proposes them.
-- **If a chosen item adds a risk tag** (usually external service, because text goes to a model
-  provider, or privacy, because personal data does), update the PRD's Assessment block and the
-  Tags column of the index row before presenting. The security passes are driven by those tags;
-  a stale tag silently skips a threat pass.
 
 ## 4. Present to the owner
 
@@ -63,10 +58,8 @@ gets one sentence on what each would feel like to use; a product manager gets th
   component is the default surface.
 - **Spec**: the "AI components" section: inputs, outputs, model tier, latency class, cost per use,
   what data leaves the app and to which provider, fallback when the model fails or is wrong, who
-  confirms what, and an evaluation set of ten real examples with expected outputs (before there
-  are users: ten written in the users' voice, one adversarial, one that is not the thing at all,
-  replaced with real ones at the first Close). Record the model choice as a decision. The provider
-  goes into `infra.md` external services when the feature ships, not before.
+  confirms what, and an evaluation set of ten real examples with expected outputs. Record the
+  model choice as a decision. Add the provider to `infra.md` external services.
 - **Security**: data sent to a provider is a privacy item; user-supplied text inside a prompt is
   an input surface. Both go through the security playbook when the feature is risk-tagged.
 - **QA**: the evaluation set is run; the fallback and correction paths are tested.
@@ -82,8 +75,5 @@ gets one sentence on what each would feel like to use; a product manager gets th
   visible; fixing it is one tap.
 - **Degrade to manual.** If the model is down or wrong, the feature still works by hand.
 - **Two to four, ranked.** Not a brainstorm.
-- **Provider-neutral, evaluation-decided.** Use the provider the stack already has. Record a
-  tier ladder (cheapest to strongest) in the spec and let the evaluation set at QA decide which
-  tier ships; cost only breaks ties. Provider guidance that says "always use the strongest model"
-  is a default, not a rule; the evaluation set is the rule. Write the settled tier back into the
-  decision.
+- **Provider-neutral.** Use the provider the stack already has; pick the cheapest tier that
+  passes the evaluation set; record the choice.

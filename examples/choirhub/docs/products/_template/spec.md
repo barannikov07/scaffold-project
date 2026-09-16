@@ -49,9 +49,7 @@ evaluation set that QA will run.
 |---|---|---|---|---|---|---|---|---|
 | | | | | | | | | |
 
-Evaluation set: ten real examples with expected outputs. Before there are users, ten written
-ones in the users' voice (including one adversarial and one that is not the thing at all), with a
-Close item to replace them with real ones from the first weeks.
+Evaluation set: ten real examples with expected outputs.
 
 1. 
 
@@ -118,8 +116,8 @@ concern is not.
 
 ## Before this passes
 
-The gate for stage 5. The agent ticks every box but the last two when they are true; the owner
-ticks the last two.
+The gate for stage 5. The agent ticks every box but the last when they are true; the owner
+ticks the last.
 
 - [ ] Every PRD flow has the screens and functions that serve it
 - [ ] Screens are named exactly as in design.md (features with a screen)
@@ -132,5 +130,4 @@ ticks the last two.
 - [ ] Test plan covers every success criterion in the PRD
 - [ ] Rollout and rollback section is honest about how it goes live and what is left behind
 - [ ] Technical review done; every one-way door is a decision entry; shortcuts are in docs/tech-debt.md
-- [ ] Every `TBD(owner)` in this spec is answered, and the answer is written where the question was
 - [ ] Owner has read the plain-language sentences and said "approved"
