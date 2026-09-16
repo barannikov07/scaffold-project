@@ -64,13 +64,24 @@ the tripwires (propose, confirm, act), and keep the manual path. Chosen, deferre
 proposals are all recorded so nothing is re-proposed. This is AI inside the product; the agent
 building the product is a different subject (orchestrator and builders).
 
-## QA and security are playbooks, not hopes
+## QA, security, and architecture are playbooks, not hopes
 
 "Tested" means every line executed with evidence in a recorded run; "secure" means every denial
-has an enforcing rule that was tested. Both are playbooks the spine calls at fixed points,
-driven by tags set at Assess, so they happen without anyone remembering. They prefer stronger
-built-in skills when the agent has them and fall back to their own checklists when not, so the
-process is complete on any agent and better on the agents that have more.
+has an enforcing rule that was tested; "built right" means a CTO pass read the spec and named
+the simplest build, the biggest risk, and the one-way doors before anyone typed code. All three
+are playbooks the spine calls at fixed points, driven by tags set at Assess, so they happen
+without anyone remembering. They prefer stronger built-in skills when the agent has them and
+fall back to their own checklists when not, so the process is complete on any agent and better
+on the agents that have more.
+
+## Light by default
+
+Process that costs too much gets skipped, so every piece is sized to its trigger. Playbooks are
+read only when they fire, so a session carries about five thousand tokens of process, not the
+whole set. Specialists fire only when their tag is set. The CTO pass is three sentences unless
+the spec adds a table, a service, an AI component, or a risk. Small features skip PRD, design,
+spec, and every specialist. The owner's decisions stay at three, four with a screen; no
+specialist adds a gate.
 
 ## The planning stack: four altitudes
 

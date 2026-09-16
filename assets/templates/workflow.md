@@ -105,7 +105,10 @@ edge cases, migration plan, work items, test plan, rollout and rollback. Written
 threat pass fills the Security section: what data is sensitive, who may see it, which rule
 enforces each denial, what a malicious user would try. For chosen AI items, the AI components
 section names inputs, outputs, model tier, cost, what data leaves the app, the fallback, who
-confirms what, and an evaluation set of real examples. A record once built.
+confirms what, and an evaluation set of real examples. Before the owner approves, the CTO pass
+(`docs/playbooks/cto.md`) adds the Technical review: the simplest build, the biggest risk,
+one-way doors recorded as decisions, and any deliberate shortcut logged in `docs/tech-debt.md`.
+A record once built.
 
 **Migrate.** Only additive changes: add tables, add nullable columns, add indexes. Never rename or
 drop in the same change that adds. The change is applied to the live database out of band and
@@ -137,13 +140,14 @@ site. If it fails, roll back (below) before investigating.
 **Close.** Mark the index row Live, add the shipped date to the roadmap, write two or three lines
 in the guide's "Outcome" section on whether the success criteria were met (and whether any AI
 step saved the time the PRD claimed), append the feature's golden path to
-`docs/qa/regression.md`, add a design-system changelog row if the feature changed it, add a
+`docs/qa/regression.md`, add a design-system changelog row if the feature changed it, run the
+CTO pass's debt review so anything in `docs/tech-debt.md` that has come due is scheduled, add a
 decision entry if anything surprising was learned, and ask the owner whether the order of the
 remaining milestones still holds.
 
 ## Specialists, and when they fire
 
-Four playbooks carry the professional practice. They are called by `new-feature` and `ship` at
+Five playbooks carry the professional practice. They are called by `new-feature` and `ship` at
 fixed points, driven by the tags from Assess, so the owner never has to remember them. Each also
 works as a standalone command for a re-run. Every playbook prefers a stronger built-in skill when
 the agent has one and falls back to its own checklist when not, so the process is complete on any
@@ -155,6 +159,7 @@ agent and better on the agents that have more.
 | `docs/playbooks/design.md` | Design | has-UI features | A design canvas or design critique skill; an accessibility review skill |
 | `docs/playbooks/security.md` | Spec (threat pass), QA (diff checklist), tech setup (baseline) | Risk-tagged features; the baseline once | A built-in security review skill |
 | `docs/playbooks/qa.md` | QA, before the owner's acceptance | Every feature; Small in short form | A skill that runs the app and takes screenshots; a code review skill |
+| `docs/playbooks/cto.md` | Spec (technical review), tech setup (setup mode), Close (debt review) | Every Full feature; light unless the spec adds a table, a service, an AI component, or a risk tag | Nothing extra; judgment over the spec and infra.md |
 
 Skipping a specialist whose tag is set is a process failure to report, not a shortcut to take.
 
@@ -257,3 +262,4 @@ updated.
 | `/ai-native <slug>` | Propose where AI inside the product removes a step; record the decisions in the PRD |
 | `/qa <slug>` | Execute the full QA run with evidence; triage; write the acceptance checklist |
 | `/security <slug>` | Threat pass at spec, diff checklist at QA, or the project baseline |
+| `/cto <slug>` | Technical review of a spec: simplest build, biggest risk, one-way doors, tech debt; setup mode at tech setup; debt review at Close |

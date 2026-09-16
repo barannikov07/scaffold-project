@@ -95,6 +95,25 @@ How it goes live: to everyone at once, behind a feature flag, or staged (which u
 Risk-tagged features need a flag or a stage. Then: what reverting the merge commit leaves behind
 (data, external state) and whether any of it needs cleanup.
 
+## Technical review
+
+Filled by the CTO pass (`docs/playbooks/cto.md`) after the draft, before approval. Light (three
+sentences) when nothing below applies; the full table when the spec adds a table, an external
+service, an AI component, or carries a risk tag. "Fine" is a valid answer for a row; an invented
+concern is not.
+
+| Check | Finding |
+|---|---|
+| Fit | |
+| Data | |
+| Contracts | |
+| Scale and cost | |
+| Reliability | |
+| Observability | |
+| Simplicity | |
+| One-way doors | none, or decision IDs |
+| Debt | none, or rows added to docs/tech-debt.md |
+
 ## Before this passes
 
 The gate for stage 5. The agent ticks every box but the last when they are true; the owner
@@ -110,4 +129,5 @@ ticks the last.
 - [ ] Work items are independent, file-scoped, and together cover every screen and function above
 - [ ] Test plan covers every success criterion in the PRD
 - [ ] Rollout and rollback section is honest about how it goes live and what is left behind
+- [ ] Technical review done; every one-way door is a decision entry; shortcuts are in docs/tech-debt.md
 - [ ] Owner has read the plain-language sentences and said "approved"

@@ -33,6 +33,7 @@ file for Claude Code. Edit this file, never that one.
 | Adding AI to a feature | docs/playbooks/ai-native.md, the feature's prd.md |
 | Testing anything | docs/playbooks/qa.md, docs/qa/regression.md, the feature's spec.md |
 | Anything with money, privacy, sign-in, or an external service | docs/playbooks/security.md, infra.md (Identities and access) |
+| Deciding how something should be built, or whether it will scale | docs/playbooks/cto.md, infra.md, docs/tech-debt.md |
 
 ## Tripwires
 
@@ -57,6 +58,7 @@ One line each. The full text and the reasoning live in [workflow.md](workflow.md
 8. The strongest model plans and reviews; builders build from briefs; two review rounds, then stop and tell the owner.
 9. Anything with a screen is designed and approved as a mockup before it is built; the build matches the mockup.
 10. AI inside the product must remove a step; it proposes, a person confirms, and the manual path stays.
+11. No spec reaches build without the CTO pass; one-way doors are decisions, shortcuts are logged debt with a due date.
 
 ## Owner profile
 
@@ -78,10 +80,10 @@ every document true.
 
 ## Commands
 
-The process is carried by eight playbooks in `docs/playbooks/`. Claude Code and Codex expose
+The process is carried by nine playbooks in `docs/playbooks/`. Claude Code and Codex expose
 them as slash commands through thin wrappers in `.claude/skills/` and `.codex/skills/`. Any other
 agent follows the playbook directly when the owner says the trigger phrase. The first four are
-the spine; the last four are specialists the spine calls at fixed points (see workflow.md,
+the spine; the last five are specialists the spine calls at fixed points (see workflow.md,
 "Specialists, and when they fire").
 
 | Owner says | Follow |
@@ -94,6 +96,7 @@ the spine; the last four are specialists the spine calls at fixed points (see wo
 | "where can AI help", "make it smarter", "AI features" | `docs/playbooks/ai-native.md` |
 | "test it", "QA", "does it work", "check everything" | `docs/playbooks/qa.md` |
 | "security", "is this safe", "who can see this", "review permissions" | `docs/playbooks/security.md` |
+| "is this built right", "tech review", "will it scale", "ask the CTO" | `docs/playbooks/cto.md` |
 
 ## Directory map
 
@@ -109,10 +112,11 @@ docs/decisions.md             append-only decision log, D-001 onward
 docs/design/system.md         design system: tokens, type, components, copy rules (living)
 docs/design/mockup-base.html  the base every mockup starts from
 docs/qa/regression.md         golden paths of every shipped feature (living, appended at Close)
+docs/tech-debt.md             deliberate shortcuts with a pay-by milestone (living, reviewed at Close)
 docs/products/<slug>/         prd.md, design.md, spec.md (records), guide.md (living), qa.md (runs), mockups/
 docs/products/_template/      copy this for each new feature
 docs/products/tech-setup/     day-one technical setup, tracked like a feature
-docs/playbooks/               the eight commands, canonical text
+docs/playbooks/               the nine commands, canonical text
 .claude/skills/ .codex/skills/  thin wrappers that expose the playbooks as slash commands
 .github/pull_request_template.md   merge checklist mirroring the rules
 ```

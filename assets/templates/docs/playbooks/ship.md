@@ -70,6 +70,8 @@ site. If it fails, revert the merge commit and push, then investigate. Report fa
   learned, and, for any AI step, whether it saved the time the PRD claimed.
 - `docs/qa/regression.md`: append this feature's golden path.
 - `docs/design/system.md` changelog row, if the feature changed the system.
+- The CTO pass's debt review: anything in `docs/tech-debt.md` due by this milestone is scheduled
+  as a Small change or a roadmap row; nothing is silently rolled forward.
 - `/decision` for anything surprising that a future session should know.
 - Ask the owner one question: does the order of the remaining milestones still hold, and does
   the vision still hold? Update the roadmap "Last reviewed" date either way.

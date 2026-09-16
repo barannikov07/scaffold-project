@@ -73,8 +73,12 @@ with one plain sentence.
 **If the feature is risk-tagged, run the security playbook's threat pass**
 (`docs/playbooks/security.md`) and fill the spec's Security section before presenting.
 
-Present the plain sentences, the test plan, and, when present, the security summary in terms of
-who can see and do what. Iterate until "approved" and the checklist is ticked. Record the date,
+**Then run the CTO pass** (`docs/playbooks/cto.md`): light unless the spec adds a table, a
+service, an AI component, or a risk tag. It fills the Technical review section, records one-way
+doors as decisions, and logs shortcuts in `docs/tech-debt.md`.
+
+Present the plain sentences, the test plan, the CTO pass's two sentences (biggest risk,
+simplest build), and, when present, the security summary in terms of who can see and do what. Iterate until "approved" and the checklist is ticked. Record the date,
 set the index row to stage Spec, and commit to `main` (`docs(<slug>): spec`).
 
 ## 5. Hand off to build

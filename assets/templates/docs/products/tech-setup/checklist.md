@@ -29,7 +29,7 @@ with no product logic.
 - [ ] Security baseline per `docs/playbooks/security.md`: secrets only in the host and `.env.local` with none in repository history, row-level rules default-deny, sign-in expiry, HTTPS and headers, backups on with a restore tried, dependency audit in the verify script, no personal data in logs. Record evidence in `infra.md` (Security baseline).
 - [ ] Push to GitHub, confirm {{HOSTING}} deploys `main`, and walk the live site once.
 - [ ] Draw the real sign-in sequence diagram and the initial entity diagram in `infra.md`.
-- [ ] Fill `infra.md` Operations: where logs are, how backups work.
+- [ ] CTO pass in setup mode (`docs/playbooks/cto.md`): confirm the stack still fits, fill `infra.md` Operations (where logs are, how backups restore, what to check first), and start `docs/tech-debt.md` if any shortcut was taken.
 - [ ] Update this product's `guide.md`, mark milestone 0 Done in the roadmap, mark this row Live in the index. Record any surprising choice as a decision.
 
 ## Before this passes

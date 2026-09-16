@@ -316,7 +316,7 @@ sequenceDiagram
   <div class="wrap">
     <div class="eyebrow">Every feature after that</div>
     <h2>Ten stages, two lanes, three decisions (four with a screen).</h2>
-    <p class="lede">The workflow the scaffold installs. The owner decides at three moments, four when the feature has a screen; everything else is the agent's. Specialist playbooks for applied AI, design, QA, and security fire at fixed stages. Watch it advance, or click a stage.</p>
+    <p class="lede">The workflow the scaffold installs. The owner decides at three moments, four when the feature has a screen; everything else is the agent's. Specialist playbooks for applied AI, design, a CTO pass, QA, and security fire at fixed stages. Watch it advance, or click a stage.</p>
     <div class="pipe reveal" style="margin-top:24px">
       <div class="pipe-head">
         <div class="legend"><span class="lane owner">Owner decides</span><span class="lane orch">Claude does</span></div>
@@ -445,7 +445,8 @@ sequenceDiagram
   C->>O: Design: design system on first run, then mockups to open in a browser
   O-->>C: "approved" (the mockup)
   C->>C: commit design to main · index → Design
-  C->>O: Spec: plain sentences, test plan, work items, security summary (risk-tagged)
+  C->>C: security threat pass (risk-tagged) · CTO pass: simplest build, biggest risk, one-way doors
+  C->>O: Spec: plain sentences, test plan, work items, the two CTO sentences
   O-->>C: "approved"
   C->>C: commit spec to main · apply additive migration to live DB · mirror schema
   C->>B: work items 1..n, self-contained briefs (parallel)
@@ -567,7 +568,7 @@ sequenceDiagram
   const files = [
     ['AGENTS.md','hot'],['CLAUDE.md  → @AGENTS.md',''],['workflow.md',''],['infra.md','hot'],['.gitignore',''],
     ['.github/','dir'],['  pull_request_template.md',''],
-    ['.claude/skills/','dir'],['  new-feature · ship · status · decision',''],['  design · ai-native · qa · security',''],['.codex/skills/','dir'],['  the same eight, for Codex',''],['docs/playbooks/','dir'],['  the eight commands, canonical',''],['docs/design/','dir'],['  system.md · mockup-base.html','hot'],['docs/qa/','dir'],['  regression.md',''],
+    ['.claude/skills/','dir'],['  new-feature · ship · status · decision',''],['  design · ai-native · qa · security · cto',''],['.codex/skills/','dir'],['  the same nine, for Codex',''],['docs/playbooks/','dir'],['  the nine commands, canonical',''],['docs/design/','dir'],['  system.md · mockup-base.html','hot'],['docs/qa/','dir'],['  regression.md',''],['  tech-debt.md',''],
     ['docs/','dir'],['  vision.md','hot'],['  roadmap.md','hot'],['  product-index.md',''],['  decisions.md','hot'],
     ['  products/','dir'],['    _template/  prd.md · spec.md · guide.md',''],['    tech-setup/  checklist.md · guide.md',''],['    rehearsal-rsvp/  prd.md · design.md · spec.md · guide.md · mockups/','hot'],
   ];
@@ -590,7 +591,7 @@ sequenceDiagram
     { n:'Assess', who:'both', out:'Size (Small / Full), risk tags, vision fit, dependencies, recommendation.', gate:'Owner says go, later, or no. Row in the product index.', ex:'Full: new screens, new tables, a new permission boundary. Risk: privacy. Advances "the conductor\'s time is the scarcest resource". Go?' },
     { n:'PRD', who:'both', out:'docs/products/&lt;slug&gt;/prd.md in the owner\'s language, with a vision-fit section. The applied-AI pass then proposes two to four places where AI removes a step; the owner chooses.', gate:'Owner says "approved"; every box in "Before this passes" ticked. Committed to main.', ex:'ChoirHub: paste the WhatsApp message and the rehearsal is created with date, place and songs, one confirmation. Chosen for now; reminders deferred.' },
     { n:'Design', who:'both', out:'Only if the feature has a screen. design.md (screens, flows, every state, real copy) and static HTML mockups on the project design system, built with the owner on the first run.', gate:'Owner opens the mockups in a browser and says "approved". Committed to main.', ex:'Five questions create the design system: "calm, warm, clear", light and dark, friendly and brief. Then one mockup per screen, including the AI "here is what I understood" state.' },
-    { n:'Spec', who:'both', out:'spec.md: data model, functions, screens by design name, permissions, AI components, security section when risk-tagged, edge cases, migration plan, work items, test plan, rollout and rollback.', gate:'Owner reads the plain sentences and says "approved". Committed to main.', ex:'"Additive only: a rehearsals table, an rsvps table. Nothing renamed or dropped." Threat pass: singers never see each other\'s emails, enforced by a row-level rule, tested at QA.' },
+    { n:'Spec', who:'both', out:'spec.md: data model, functions, screens by design name, permissions, AI components, security section when risk-tagged, edge cases, migration plan, work items, test plan, rollout and rollback.', gate:'Owner reads the plain sentences and says "approved". Committed to main.', ex:'"Additive only: a rehearsals table, an rsvps table. Nothing renamed or dropped." Threat pass: singers never see each other\'s emails, enforced by a row-level rule. CTO pass: biggest risk is the pasted-message parser guessing dates; simplest build shows its reading before saving.' },
     { n:'Migrate', who:'orch', out:'Idempotent, additive change applied to the live database and mirrored in the schema file.', gate:'Applied before any dependent code merges.', ex:'apply-rehearsal-rsvp-1-tables.sql, safe to run twice.' },
     { n:'Build', who:'orch', out:'Branch feat/&lt;slug&gt;. Orchestrator briefs builders from the work items, reviews the diff, at most two fix rounds. Guide, index, roadmap, infra updated on the same branch.', gate:'Build passes, verify script passes, docs match the code.', ex:'Three builders in parallel: screens, data access, permissions. Two findings in round one, zero in round two.' },
     { n:'QA', who:'both', out:'The QA playbook: every test-plan line, the permission matrix, one check per tripwire, every designed state, phone width, accessibility floor, regression golden paths, the AI evaluation set, and the security diff checklist when tagged, each recorded with evidence. Then the owner\'s acceptance checklist.', gate:'Zero blockers; owner says "accepted". "Later" items become roadmap lines.', ex:'"Sign in as the test singer. Open the next rehearsal. Tap Coming. Confirm the conductor\'s list shows you within a second."' },
