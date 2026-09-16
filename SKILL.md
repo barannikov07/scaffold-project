@@ -29,7 +29,7 @@ answer and a "you decide" option. Do not ask for a "stack"; ask what the product
 whether people sign in, whether it stores data, whether money moves, and what the first thing to
 build is. You translate those answers into technical choices, not the owner.
 
-Roughly eight questions, plus two at the start about the owner: how technical they are and how
+About ten questions, plus two at the start about the owner: how technical they are and how
 familiar with product work. Those two set the explanation depth for the whole project and go
 into the owner profile in AGENTS.md. One more near the end asks what is most tedious today; it
 seeds the first PRD's problem and the first applied-AI proposals. Stop early if the owner gives

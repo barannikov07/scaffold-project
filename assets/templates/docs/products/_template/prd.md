@@ -75,7 +75,9 @@ Scope and Flows, with the confirmation step shown), deferred (a roadmap Later ro
 
 ## Open questions
 
-`TBD(owner):` lines that must be answered before approval.
+`TBD(owner):` lines that must be answered before approval. Once answered, each stays as
+"question → answer, date" so the record of what was asked survives; the section is never
+emptied.
 
 - 
 

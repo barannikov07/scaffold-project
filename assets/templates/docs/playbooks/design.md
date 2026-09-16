@@ -57,11 +57,16 @@ The feature's `design.md` was stamped from the template. Fill it from the PRD's 
 One static HTML file per screen in `docs/products/<slug>/mockups/`, plus `index.html` that
 links them all with a one-line description each.
 
-- Start every file from `docs/design/mockup-base.html`. It carries the tokens as CSS variables
-  and a phone frame. Its token block is replaced with the design system's values once, on the
-  first run, so every later mockup inherits them.
+- Start every file from `docs/design/mockup-base.html`. It carries the tokens as CSS variables,
+  a phone frame, and the common components (top bar, list rows, fields, segmented control,
+  confirmation card, banners, skeleton, bottom tabs, sheet, toast). Its token block is replaced
+  with the design system's values once, on the first run, so every later mockup inherits them.
+  A component needed by two screens is added to the base and to `system.md`; a one-off stays in
+  its screen.
 - Real copy from `design.md`, real-looking data from the product's domain, never lorem ipsum.
-- States are extra phone frames in the same file, or separate files suffixed `-empty`, `-error`.
+- One `<figure>` per state, with the state's name in the `<figcaption>` outside the phone, never
+  inside it: a label inside the frame reads as app chrome to an owner who has never seen a mockup.
+  Separate files suffixed `-empty`, `-error` are fine when one file would get long.
 - No frameworks, no build step, no JavaScript beyond toggling a state. These are pictures that
   happen to be HTML; they are never imported into the app.
 - If the agent has a design canvas skill, also publish the screens there so the owner can nudge

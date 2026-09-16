@@ -21,7 +21,8 @@ Status values: Later · Planned · In progress · Done · Dropped
 
 ## Later (unordered ideas)
 
-One line each. Promote to a numbered row when it is assessed.
+One line each. Promote to a numbered row when it is assessed. Deferred applied-AI opportunities
+land here with a link to their PRD; that is not a Changes entry.
 
 - None yet.
 

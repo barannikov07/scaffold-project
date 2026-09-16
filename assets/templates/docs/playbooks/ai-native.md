@@ -43,8 +43,13 @@ Fill the PRD's "AI opportunities" table with every candidate and a decision colu
 - **Chosen** items go into Scope and into the Flows, with the human confirmation step shown.
   Success criteria gain a measurable line ("a rehearsal is created from a pasted message in under
   ten seconds, with the conductor confirming once").
-- **Deferred** items become a roadmap Later row with a link back to this PRD.
+- **Deferred** items become one line in the roadmap's "Later (unordered ideas)" list with a link
+  back to this PRD. Not a milestone row and not a Changes entry; a deferral is not a decision.
 - **Rejected** items go into Non-goals with the reason, so no future session re-proposes them.
+- **If a chosen item adds a risk tag** (usually external service, because text goes to a model
+  provider, or privacy, because personal data does), update the PRD's Assessment block and the
+  Tags column of the index row before presenting. The security passes are driven by those tags;
+  a stale tag silently skips a threat pass.
 
 ## 4. Present to the owner
 

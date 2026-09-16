@@ -1,7 +1,7 @@
 # Design: {{FEATURE_NAME}}
 
 Status: Draft · Approved on: not yet · Build started on: not yet
-PRD: [prd.md](prd.md) · Mockups: [mockups/index.html](mockups/index.html) · Design system: [../../design/system.md](../../design/system.md)
+PRD: [prd.md](prd.md) · Mockups: `mockups/index.html` (created by the design playbook) · Design system: [../../design/system.md](../../design/system.md)
 
 What the feature looks like and how it behaves on screen, agreed before any code. The mockups
 are the contract; screen names here are used verbatim in the spec and the build. A record once
@@ -52,6 +52,14 @@ Focus order, labels, 44 px touch targets, contrast against the floor in the desi
 | Screen | File | States shown |
 |---|---|---|
 | | mockups/ | |
+
+## Critique
+
+What the ten-point walk in the design playbook actually changed, one line per change, before the
+owner saw anything. A walk that changed nothing is suspicious; say which points were closest to
+failing.
+
+- 
 
 ## Before this passes
 
