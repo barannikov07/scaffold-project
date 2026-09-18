@@ -65,7 +65,20 @@
   @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
   .hero .kicker { font-family: "IBM Plex Mono", monospace; font-size: .85rem; color: var(--ink-3); margin-bottom: 1.25rem; }
   .hero .kicker b { color: var(--orch); font-weight: 500; }
-  .facts { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 1.5rem; }
+  .facts { display: flex; gap: 20px 40px; flex-wrap: wrap; margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line-soft); }
+  .points { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: 14px; }
+  .points li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; align-items: start; font-size: .95rem; color: var(--ink-2); line-height: 1.45; }
+  .points .num { width: 30px; height: 30px; border-radius: 50%; background: var(--orch-soft); color: var(--orch); font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: .95rem; display: grid; place-items: center; margin-top: 1px; }
+  .points b { display: block; color: var(--ink); font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.08rem; margin-bottom: 1px; }
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1.75rem; }
+  .cta { display: inline-flex; align-items: center; font-weight: 600; font-size: .95rem; padding: 10px 18px; border-radius: 10px; text-decoration: none; border: 1px solid var(--ink); transition: transform .15s ease, border-color .15s ease; }
+  .cta:hover { transform: translateY(-1px); }
+  .cta:focus-visible { outline: 2px solid var(--orch); outline-offset: 2px; }
+  .cta.primary { background: var(--ink); color: var(--bg); }
+  .cta.ghost { color: var(--ink); background: var(--surface); border-color: var(--line); }
+  .cta.ghost:hover { border-color: var(--ink-3); }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .cta:hover { transform: none; } }
   .fact { display: grid; gap: 2px; }
   .fact .n { font-family: "Bricolage Grotesque", sans-serif; font-size: 2rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
   .fact .l { font-size: .8rem; color: var(--ink-3); }
@@ -180,25 +193,62 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="kicker">~/choirhub $ <b>"start a new project"</b></div>
-      <h1>From one sentence to a project a top team would recognise.</h1>
-      <p class="lede">A Claude Code skill for people who are not developers. It interviews you in plain language, then writes the documents and the process a strong product team would have on day one. No application code. This page follows a real run: <strong>ChoirHub</strong>, an app for a community choir.</p>
-      <div class="facts">
-        <div class="fact"><span class="n">8</span><span class="l">plain-language questions</span></div>
-        <div class="fact"><span class="n">40</span><span class="l">files created</span></div>
-        <div class="fact"><span class="n">1</span><span class="l">commit on main</span></div>
-        <div class="fact"><span class="n">3</span><span class="l">moments the owner decides</span></div>
+      <div class="kicker">A free skill for <b>Claude Code</b> and <b>Codex</b> · for people who are not developers</div>
+      <h1>Describe your app once. Build it like a top team.</h1>
+      <p class="lede">It interviews you in plain language, sets the project up the way a strong product team would, and remembers it for every session after. It does not write the app. It makes sure the agent builds it right.</p>
+      <ul class="points">
+        <li><span class="num">1</span><div><b>Interviews you.</b>Eight plain questions. No jargon, no "which stack?".</div></li>
+        <li><span class="num">2</span><div><b>Sets up the project.</b>Vision, roadmap, decisions, a ten-stage process, nine playbooks. Forty files, one commit.</div></li>
+        <li><span class="num">3</span><div><b>Remembers, without the bloat.</b>Every later session reads a one-page map and only what its task needs.</div></li>
+      </ul>
+      <div class="cta-row">
+        <a class="cta primary" href="#install">Install in one line</a>
+        <a class="cta ghost" href="#created">See what it creates</a>
       </div>
     </div>
     <div class="chat" aria-label="The interview, replayed">
-      <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><span>the interview, replayed</span></div>
+      <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span><span>a real run, ChoirHub · the interview, replayed</span></div>
       <div class="chat-body" id="chat"></div>
       <div class="chat-foot"><span id="chat-status">playing…</span><button class="btn" id="chat-replay" type="button">Replay</button></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="facts">
+      <div class="fact"><span class="n">8</span><span class="l">plain-language questions</span></div>
+      <div class="fact"><span class="n">40</span><span class="l">files created</span></div>
+      <div class="fact"><span class="n">1</span><span class="l">commit on main</span></div>
+      <div class="fact"><span class="n">3</span><span class="l">moments the owner decides</span></div>
+      <div class="fact"><span class="n">~5k</span><span class="l">tokens of process per session</span></div>
     </div>
   </div>
 </section>
 
 <section>
+  <div class="wrap">
+    <div class="eyebrow">Two things, not one</div>
+    <h2>A scaffold, and a memory.</h2>
+    <p class="lede">The files are half of it. An agent forgets everything between sessions, so these documents are how the project remembers itself. And a map decides what each session reads, so the right knowledge arrives at the right moment instead of everything at once.</p>
+    <div class="grid2 reveal" style="margin-top:24px">
+      <div class="card">
+        <h3>The scaffold</h3>
+        <p>The documents and the process a strong product team would have on day one: a vision, an ordered roadmap, a decisions log, a ten-stage workflow with gates, a design system, a QA list, a tech-debt register, and nine playbooks that carry the process.</p>
+        <p style="margin:0">Written once, from a plain-language interview. No application code.</p>
+      </div>
+      <div class="card">
+        <h3>The memory</h3>
+        <p>Every session starts empty. What the agent remembers is these documents, so every fact lives in exactly one place and nothing drifts. <code>AGENTS.md</code> is a map, not a manual: a fresh session reads the map and the tripwires, then only the documents its task names.</p>
+        <ul>
+          <li>Writing a PRD: vision, roadmap, product index</li>
+          <li>Building code: the feature's spec and guide, infra.md, workflow.md</li>
+          <li>Anything with money or sign-in: the security playbook, infra.md</li>
+        </ul>
+        <p style="color:var(--ink-3);font-size:.85rem;margin:10px 0 0">Playbooks load only when they fire, specialists only when their tag is set. About five thousand tokens of process per session, not the whole set.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="created">
   <div class="wrap">
     <div class="eyebrow">What gets created</div>
     <h2>Forty files, every fact in exactly one place.</h2>
@@ -498,7 +548,7 @@ sequenceDiagram
   </div>
 </section>
 
-<section>
+<section id="install">
   <div class="wrap narrow">
     <div class="eyebrow">Try it</div>
     <h2>Install, then say "start a new project".</h2>
