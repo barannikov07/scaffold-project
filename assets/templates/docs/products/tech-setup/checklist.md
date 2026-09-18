@@ -22,6 +22,7 @@ Each step is verified before the next. The result is a running, deployable, test
 with no product logic.
 
 - [ ] Initialise the {{FRAMEWORK}} project in this folder, keeping every existing document.
+- [ ] Create the design system with the owner (`docs/playbooks/design.md`, section 1): five questions, then the tokens and base components as real code in the app, a gallery page on localhost and previews only that shows every component in every state, `docs/design/system.md` filled, and the choice recorded as a decision.
 - [ ] Add `.env.example` listing every variable name the stack needs, with empty values. Fill the names into `infra.md` (Environment variables).
 - [ ] Connect the database and sign-in. Record the schema file path in `infra.md` (Data model).
 - [ ] Create the QA seam: a localhost-only test login and a seeded test user with obviously-marked test data. Record both in `infra.md` (Test identities). Confirm the test login cannot exist in production builds.
@@ -38,5 +39,6 @@ with no product logic.
 - [ ] The production URL shows the same page
 - [ ] Test login works locally and is absent from the production build
 - [ ] Verify script passes
+- [ ] The design system exists in code and in `docs/design/system.md`, and the gallery page shows every component in every state
 - [ ] Security baseline in `infra.md` ticked with evidence
 - [ ] `infra.md` has no `TBD(claude)` left in Stack, Environments, Identities, or Operations

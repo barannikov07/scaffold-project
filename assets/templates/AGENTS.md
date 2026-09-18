@@ -29,7 +29,7 @@ file for Claude Code. Edit this file, never that one.
 | Changing data or the schema | infra.md (Data model), workflow.md (Migration protocol) |
 | Shipping | workflow.md (Release and Close), .github/pull_request_template.md |
 | Answering "where are we?" | docs/product-index.md, docs/roadmap.md |
-| Designing a screen or changing how anything looks | docs/design/system.md, the feature's design.md, docs/playbooks/design.md |
+| Building a screen or changing how anything looks | docs/design/system.md, docs/playbooks/design.md, the feature's spec.md (Screens) |
 | Adding AI to a feature | docs/playbooks/ai-native.md, the feature's prd.md |
 | Testing anything | docs/playbooks/qa.md, docs/qa/regression.md, the feature's spec.md |
 | Anything with money, privacy, sign-in, or an external service | docs/playbooks/security.md, infra.md (Identities and access) |
@@ -56,7 +56,7 @@ One line each. The full text and the reasoning live in [workflow.md](workflow.md
 6. Small reversible steps: one feature per branch, branches live days not weeks.
 7. Changing the vision is a decision. Record it; never let a PRD quietly drift from it.
 8. The strongest model plans and reviews; builders build from briefs; two review rounds, then stop and tell the owner.
-9. Anything with a screen is designed and approved as a mockup before it is built; the build matches the mockup.
+9. Every screen is built from the design system; a missing component or token is added to the system first, then used. No one-off UI.
 10. AI inside the product must remove a step; it proposes, a person confirms, and the manual path stays.
 11. No spec reaches build without the CTO pass; one-way doors are decisions, shortcuts are logged debt with a due date.
 
@@ -74,7 +74,7 @@ default to less; a beginner gets the why of each gate, a product manager gets th
 
 ## Who does what
 
-{{OWNER}} owns the product: decides what to build, approves PRDs, mockups, and specs, accepts
+{{OWNER}} owns the product: decides what to build, approves PRDs and specs, accepts
 features, and approves releases. The agent drafts, designs, builds, tests, verifies, and keeps
 every document true.
 
@@ -92,7 +92,7 @@ the spine; the last five are specialists the spine calls at fixed points (see wo
 | "ship it", "release", "is it ready", "let's go live" | `docs/playbooks/ship.md` |
 | "where are we", "status", "what's next" | `docs/playbooks/status.md` |
 | "we'll go with", "record that", "let's decide" | `docs/playbooks/decision.md` |
-| "design", "mockup", "what will it look like", "make it beautiful" | `docs/playbooks/design.md` |
+| "design", "design system", "what will it look like", "make it beautiful", "add a component" | `docs/playbooks/design.md` |
 | "where can AI help", "make it smarter", "AI features" | `docs/playbooks/ai-native.md` |
 | "test it", "QA", "does it work", "check everything" | `docs/playbooks/qa.md` |
 | "security", "is this safe", "who can see this", "review permissions" | `docs/playbooks/security.md` |
@@ -110,10 +110,9 @@ docs/roadmap.md               ordered milestones with status and shipped dates
 docs/product-index.md         one row per feature with stage and links
 docs/decisions.md             append-only decision log, D-001 onward
 docs/design/system.md         design system: tokens, type, components, copy rules (living)
-docs/design/mockup-base.html  the base every mockup starts from
 docs/qa/regression.md         golden paths of every shipped feature (living, appended at Close)
 docs/tech-debt.md             deliberate shortcuts with a pay-by milestone (living, reviewed at Close)
-docs/products/<slug>/         prd.md, design.md, spec.md (records), guide.md (living), qa.md (runs), mockups/
+docs/products/<slug>/         prd.md, spec.md (records), guide.md (living), qa.md (runs)
 docs/products/_template/      copy this for each new feature
 docs/products/tech-setup/     day-one technical setup, tracked like a feature
 docs/playbooks/               the nine commands, canonical text

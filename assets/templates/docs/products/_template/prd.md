@@ -56,6 +56,15 @@ flow per heading.
 
 - 
 
+## Screens
+
+For features with a screen: one line per screen, in the owner's words, saying what it is for and
+the one thing the user does there. This is where the owner shapes how the product will look; the
+spec designs every state, and the build composes it from the design system. Features without a
+screen write "none".
+
+- 
+
 ## Success criteria
 
 How we will know it worked. Each line is something a person can check by using the product, and
@@ -83,12 +92,13 @@ emptied.
 
 ## Before this passes
 
-The gate for stage 3. The agent ticks the first four when they are true; only the owner ticks
+The gate for stage 3. The agent ticks the first five when they are true; only the owner ticks
 the last two. The owner approves only when every box is ticked.
 
 - [ ] Vision fit names a specific goal or principle
 - [ ] Non-goals section has at least one real exclusion
 - [ ] Every success criterion is checkable by using the product
+- [ ] Screens listed one line each in the owner's words, or "none" (features with a screen)
 - [ ] AI opportunities considered, each with a decision; chosen ones visible in Scope and Flows
 - [ ] Every open question is answered or moved to the spec as a design question
 - [ ] Owner has read it and said "approved"

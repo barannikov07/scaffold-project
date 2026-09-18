@@ -68,8 +68,8 @@ Next.js you do), otherwise leave the TBD for tech setup. Diagrams and the Operat
 
 ## docs/design/system.md and docs/qa/regression.md
 
-Leave both as stamped. The design system is filled by the design playbook, with the owner, at the
-first feature that has a screen; guessing a palette now would be invented. The regression list
+Leave both as stamped. The design system is filled by the design-system playbook, with the owner,
+at tech setup (milestone 0); guessing a palette now would be invented. The regression list
 is empty until the first feature ships.
 
 ## docs/products/<first-feature>/prd.md

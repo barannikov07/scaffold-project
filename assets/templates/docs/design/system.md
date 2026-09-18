@@ -1,9 +1,10 @@
 # Design system: {{PROJECT_NAME}}
 
-The single source of visual and verbal truth. Mockups and app code both take their tokens from
-here. Created empty by the scaffold; the design playbook fills it with the owner at the first
-feature that has a screen. Living: changes land with the feature that needs them, with a
-changelog row.
+The single source of visual and verbal truth. The app's tokens and components are this document
+made real: every screen is composed from them, and anything a screen needs that is missing is
+added here and in the app first, then used. Created empty by the scaffold; the design-system
+playbook fills it with the owner at tech setup (milestone 0). Living: changes land with the
+feature that needs them, with a changelog row.
 
 ## Feel
 
@@ -16,11 +17,11 @@ changelog row.
 
 ## Tokens
 
-Named so that mockups and code use the same words.
+Named so that this document and the code use the same words.
 
 | Token | Light | Dark | Used for |
 |---|---|---|---|
-| bg | TBD(claude): filled by the design playbook | | Page ground |
+| bg | TBD(claude): filled by the design-system playbook at tech setup | | Page ground |
 | surface | | | Cards, sheets |
 | ink | | | Primary text |
 | ink-muted | | | Secondary text, labels |
@@ -47,7 +48,9 @@ Line height 1.5 for body, 1.15 for display. Never more than two faces on a scree
 
 ## Components
 
-One row per component the product uses. Add rows as features add components.
+One row per component the product uses, each implemented in the app and shown in the dev-only
+gallery page. A screen never uses a component that is not in this table: the row and the code are
+added first, then the screen uses them.
 
 | Component | When to use | Rules |
 |---|---|---|

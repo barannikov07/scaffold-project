@@ -4,7 +4,7 @@ Living truth. This file describes how the feature works today and must match rea
 merge. When the build diverged from the PRD or spec, this is where that is recorded; the plans
 stay as the record of what was agreed.
 
-PRD: [prd.md](prd.md) · Design: [design.md](design.md) · Spec: [spec.md](spec.md) · QA runs: [qa.md](qa.md) · Stage: see [product index](../../product-index.md)
+PRD: [prd.md](prd.md) · Spec: [spec.md](spec.md) · QA runs: [qa.md](qa.md) · Stage: see [product index](../../product-index.md)
 
 ## What it does today
 

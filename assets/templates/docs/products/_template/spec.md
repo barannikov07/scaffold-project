@@ -1,7 +1,7 @@
 # Spec: {{FEATURE_NAME}}
 
 Status: Draft · Approved on: not yet · Build started on: not yet
-PRD: [prd.md](prd.md)
+PRD: [prd.md](prd.md) · Design system: [../../design/system.md](../../design/system.md)
 
 A spec says how the feature will be built. Written after the PRD is approved, before any code.
 Once the build starts it is a record and is not edited. Each technical section opens with one plain sentence for the owner.
@@ -27,10 +27,46 @@ What the app does behind the screens.
 
 ## Screens
 
-What the user sees. One row per screen, named exactly as in `design.md`; the mockup is the
-contract for how it looks. Features without a screen write "none".
+What the user sees, composed from the design system. Screen names are the contract; the build
+and the QA run use them verbatim. Features without a screen write "none".
+
+| Screen | Purpose | How the user gets there | Primary action |
+|---|---|---|---|
+| | | | |
+
+### States
+
+Every screen, every state. A state not listed here will be improvised in code.
+
+| Screen | Empty | Loading | Error | Success | Denied | AI: thinking / correct-me / fallback |
+|---|---|---|---|---|---|---|
+| | | | | | | n/a |
+
+### Copy
+
+The real words, in the design system's tone: titles, buttons, empty-state lines, error messages.
+No placeholder text.
+
+| Where | Text |
+|---|---|
+| | |
+
+### Responsive and accessible
+
+Phone first at 390 px; what changes at desktop width. Focus order, labels, 44 px touch targets,
+contrast against the floor in the design system.
 
 - 
+
+### Components
+
+Everything above is composed from `docs/design/system.md`. Anything a screen needs that the
+system lacks is listed here and added to the system, in the app and in its Components table,
+before the screen uses it.
+
+| Needed by | Component or token | Added to the system on |
+|---|---|---|
+| | | |
 
 ## Permissions
 
@@ -118,11 +154,11 @@ concern is not.
 
 ## Before this passes
 
-The gate for stage 5. The agent ticks every box but the last two when they are true; the owner
+The gate for stage 4. The agent ticks every box but the last two when they are true; the owner
 ticks the last two.
 
 - [ ] Every PRD flow has the screens and functions that serve it
-- [ ] Screens are named exactly as in design.md (features with a screen)
+- [ ] Every screen has its states and its real copy, and anything the design system lacks is listed under Components (features with a screen)
 - [ ] Every AI component has a fallback, a confirmation point wherever a tripwire applies, and an evaluation set (features with AI)
 - [ ] Security section complete and every denial has an enforcing rule (risk-tagged features)
 - [ ] Permissions cover every action for every role

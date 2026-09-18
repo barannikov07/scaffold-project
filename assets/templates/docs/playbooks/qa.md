@@ -7,8 +7,8 @@ to accept it. Runs at stage 8, called by the ship playbook; also on its own mid-
 owner says "test it", "QA", "does it work", or "check everything". Calibrate every message to the
 owner profile in `AGENTS.md`.
 
-Read first: the feature's `spec.md` (test plan, permissions, AI components), `design.md`
-(states), `AGENTS.md` (tripwires), `docs/qa/regression.md`, and the PRD's success criteria.
+Read first: the feature's `spec.md` (test plan, permissions, screens and states, AI components),
+`docs/design/system.md`, `AGENTS.md` (tripwires), `docs/qa/regression.md`, and the PRD's success criteria.
 
 ## 1. Write and execute the run
 
@@ -25,8 +25,8 @@ each line by hand in the browser. Never mark a line from reading the code.
 | Functional | Every line of the spec's test plan: the happy path and each edge case | spec.md |
 | Permissions | One row per role and action from the spec's permission table; every "denied" is actually denied, including by direct request, not only by a hidden button | spec.md |
 | Tripwires | One check per tripwire line in AGENTS.md that this feature could touch | AGENTS.md |
-| Design conformance | Each screen against its mockup; each state in design.md reachable and correct | design.md |
-| Responsive | Every screen at 390 px and at desktop width | design.md |
+| Design conformance | Each screen built from the design system with nothing one-off; each state in the spec's Screens section reachable and correct; the design-system playbook's critique walked | spec.md, design system |
+| Responsive | Every screen at 390 px and at desktop width | spec.md |
 | Accessibility floor | Keyboard reaches everything; labels present; contrast at the floor; 44 px targets | design system |
 | Data safety | The QA guardrail in workflow.md was followed; test records carry the TEST- marker | workflow.md |
 | Regression | Every golden path in docs/qa/regression.md still passes | regression.md |

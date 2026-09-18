@@ -1,6 +1,6 @@
 ---
 name: design
-description: Design a feature's screens before any code: create the project design system on first use, write design.md with screens, flows, every state and real copy, build static HTML mockups the owner opens in a browser, critique them, and stop at the owner's approval. Use when the owner says "design", "mockup", "what will it look like", "make it beautiful", or when a feature with a screen reaches the Design stage.
+description: Keep every screen on the project's design system. Create the system with the owner at tech setup as real code with a gallery page, describe screens for a PRD or spec, add a component or token to the system before any screen uses it, and critique built screens before the owner's acceptance look. Use when the owner says "design", "design system", "what will it look like", "make it beautiful", or "add a component", when tech setup reaches the design system step, or when a screen in build needs something the system lacks.
 ---
 
 Follow the playbook at `docs/playbooks/design.md` exactly. It is the single source of truth for this

@@ -49,11 +49,14 @@ matters (judgment) and cost where it does not (typing), and it is why the spec t
 
 ## Design is a gate, not a garnish
 
-A non-technical owner cannot approve a paragraph about a screen; they can approve a picture. So
-every feature with a screen goes through a Design stage that produces static HTML mockups built
-on a project design system, and the owner's approval is of the mockup. The build must match it.
-The design system exists so that every screen looks like the same product and so that "make it
-beautiful" is a set of tokens and rules a fresh session can follow, not a hope.
+A non-technical owner cannot approve a paragraph about a screen, and a mockup is a picture that
+has to be built twice. So there is no design stage. The PRD lists the screens in the owner's
+words, the spec designs every state and the real copy, and every screen is built from a project
+design system that is real code from tech setup on. One rule governs the look: use the system,
+and when a screen needs something the system lacks, add it to the system first, then use it. The
+owner sees real screens on the pull request preview at acceptance and sends them back as ordinary
+work. The design system exists so that every screen looks like the same product and so that
+"make it beautiful" is a set of tokens and components a fresh session can follow, not a hope.
 
 ## AI in the product removes a step
 
@@ -79,9 +82,8 @@ on the agents that have more.
 Process that costs too much gets skipped, so every piece is sized to its trigger. Playbooks are
 read only when they fire, so a session carries about five thousand tokens of process, not the
 whole set. Specialists fire only when their tag is set. The CTO pass is three sentences unless
-the spec adds a table, a service, an AI component, or a risk. Small features skip PRD, design,
-spec, and every specialist. The owner's decisions stay at three, four with a screen; no
-specialist adds a gate.
+the spec adds a table, a service, an AI component, or a risk. Small features skip PRD, spec,
+and every specialist. The owner's decisions stay at three; no specialist adds a gate.
 
 ## The planning stack: four altitudes
 

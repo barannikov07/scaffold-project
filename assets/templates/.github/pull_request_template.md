@@ -18,7 +18,7 @@ Nothing merges with an unticked box. These mirror the rules in `workflow.md`.
 - [ ] Any database change is additive, was applied to the live database before this merge, and is mirrored in the schema file
 - [ ] `docs/products/<slug>/qa.md` has a completed run with evidence per line; zero open blockers
 - [ ] Verified locally: build passes, verify script passes
-- [ ] Design approved and every screen matches its mockup (features with a screen)
+- [ ] Every screen is built from the design system and every state in the spec's Screens section is reachable (features with a screen)
 - [ ] Security diff checklist completed in the QA run (risk-tagged features)
 - [ ] AI evaluation set run and passing; fallback and correction paths tested (features with AI)
 - [ ] `docs/design/system.md` updated if a token or component was added

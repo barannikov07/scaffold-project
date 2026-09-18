@@ -6,21 +6,22 @@ strong product team would, for an owner who is not an engineer and builds with C
 It works with **Claude Code and Codex** out of the box, and with any agent that reads `AGENTS.md`.
 
 It creates **documents and process only, no application code**: the router `AGENTS.md`, a vision,
-a milestone roadmap, a product index, a decisions log, a ten-stage workflow, the technical
-knowledge base, a design system, a QA regression list, PRD / design / spec / guide templates, a
+a milestone roadmap, a product index, a decisions log, a nine-stage workflow, the technical
+knowledge base, a design system, a QA regression list, PRD / spec / guide templates, a
 pull request checklist, and nine playbooks that carry the process: four for the spine
 (new-feature, ship, status, decision) and five specialists the spine calls at fixed points
 (design, applied AI, QA, security, and a CTO pass). Then it starts the first PRD with you.
 
 ## See it work
 
-**[How it works → barannikov07.github.io/scaffold-project-site](https://barannikov07.github.io/scaffold-project-site/)** walks through a real run (ChoirHub, an app for a community choir): the interview replayed, the generated documents, sequence diagrams of the scaffold session and of one feature's life, the ten-stage pipeline, and the orchestrator-and-builders loop.
+**[How it works → barannikov07.github.io/scaffold-project-site](https://barannikov07.github.io/scaffold-project-site/)** walks through a real run (ChoirHub, an app for a community choir): the interview replayed, the generated documents, sequence diagrams of the scaffold session and of one feature's life, the nine-stage pipeline, and the orchestrator-and-builders loop.
 
 ## Read a finished example
 
 [`examples/choirhub`](https://github.com/barannikov07/scaffold-project-site/tree/main/examples/choirhub) is a full run on a
 community-choir app, left where a real project pauses for its owner: vision, roadmap, decisions, a PRD with the applied-AI pass, a design
-system and HTML mockups, and a spec with the security threat pass and the CTO pass. Start with
+system and HTML mockups (from the process as it was then; there is no mockup stage any more), and a
+spec with the security threat pass and the CTO pass. Start with
 [`examples/choirhub/CONVERSATION.md`](https://github.com/barannikov07/scaffold-project-site/blob/main/examples/choirhub/CONVERSATION.md),
 which is everything the owner would have seen. The example and the walkthrough site live in their
 own repository, [scaffold-project-site](https://github.com/barannikov07/scaffold-project-site), so a clone of this one contains only the skill.
@@ -32,17 +33,16 @@ AGENTS.md                     map for every future session, any agent, with trip
 CLAUDE.md                     one line, @AGENTS.md, so Claude Code reads the same map
 docs/playbooks/               nine playbooks (canonical): new-feature, ship, status, decision, design, ai-native, qa, security, cto
 .claude/skills/ .codex/skills/ thin wrappers exposing them as slash commands in Claude Code and Codex
-workflow.md                   idea → assess → PRD → design → spec → migrate → build → QA → release → close
+workflow.md                   idea → assess → PRD → spec → migrate → build → QA → release → close
 infra.md                      stack, environments, identities, security baseline, data model, key flows, operations
 docs/design/system.md         design system: tokens, type, components, copy rules (living)
-docs/design/mockup-base.html  the base every mockup starts from
 docs/qa/regression.md         golden paths of every shipped feature (living)
 docs/tech-debt.md             deliberate shortcuts with a pay-by milestone (living)
 docs/vision.md                north star; changes only through a recorded decision
 docs/roadmap.md               one ordered milestone table: planned, delivered, next
 docs/product-index.md         one row per feature with its stage and links
 docs/decisions.md             append-only decision log, D-001 onward
-docs/products/<slug>/         prd.md, design.md, spec.md (records), guide.md (living), qa.md (runs), mockups/
+docs/products/<slug>/         prd.md, spec.md (records), guide.md (living), qa.md (runs)
 docs/products/tech-setup/     day-one technical setup, tracked like a feature
 .github/pull_request_template.md
 ```
@@ -54,8 +54,8 @@ docs/products/tech-setup/     day-one technical setup, tracked like a feature
 - **Done includes docs.** Nothing merges until the guide, index, and roadmap reflect the change.
 - **Tripwires over tribal knowledge.** Every hard invariant gets one line in AGENTS.md pointing to its owner.
 - **Size decides ceremony.** Small changes go straight to build; anything with a new screen, table, permission, or money path gets the full path.
-- **The owner decides at three moments**, four when there is a screen: approving the PRD, approving the mockup, accepting the feature, approving the release. The agent does the rest.
-- **Design is a gate, not a garnish.** Anything with a screen is designed on a project design system and approved as a static HTML mockup the owner opens in a browser, before any code. The build must match it.
+- **The owner decides at three moments**: approving the PRD, accepting the feature, approving the release. The agent does the rest.
+- **Design is a system, not a stage.** Every screen is built from the project's design system, created with the owner at tech setup and real code from day one. Anything a screen needs that the system lacks is added to the system first, then used; no one-off UI. Screens are listed in the PRD, designed state by state in the spec, and seen by the owner on the pull request preview, where sending one back is ordinary work.
 - **AI in the product removes a step.** An applied-AI pass runs on every PRD draft and proposes two to four places where AI takes the tedious part (voice or paste to record, auto-mapping, drafted messages, drift signals). It proposes, a person confirms, the manual path stays.
 - **QA, security, and architecture are playbooks, not hopes.** Every QA line is executed with evidence in a recorded run; risk-tagged features get a threat pass at spec and a diff checklist at QA; every spec gets a CTO pass that names the simplest build, the biggest risk, and the one-way doors, and logs shortcuts as debt with a due date. All prefer stronger built-in skills when the agent has them.
 - **Light by default.** Playbooks load only when they fire (about 5,000 tokens of process per session, not the whole set), specialists only when their tag is set, and the CTO pass is three sentences unless the spec adds a table, a service, an AI component, or a risk.
