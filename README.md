@@ -14,15 +14,16 @@ pull request checklist, and nine playbooks that carry the process: four for the 
 
 ## See it work
 
-**[How it works → barannikov07.github.io/scaffold-project](https://barannikov07.github.io/scaffold-project/)** walks through a real run (ChoirHub, an app for a community choir): the interview replayed, the generated documents, sequence diagrams of the scaffold session and of one feature's life, the ten-stage pipeline, and the orchestrator-and-builders loop.
+**[How it works → barannikov07.github.io/scaffold-project-site](https://barannikov07.github.io/scaffold-project-site/)** walks through a real run (ChoirHub, an app for a community choir): the interview replayed, the generated documents, sequence diagrams of the scaffold session and of one feature's life, the ten-stage pipeline, and the orchestrator-and-builders loop.
 
 ## Read a finished example
 
-[`examples/choirhub`](examples/choirhub) is a full run on a community-choir app, left where a real
-project pauses for its owner: vision, roadmap, decisions, a PRD with the applied-AI pass, a design
+[`examples/choirhub`](https://github.com/barannikov07/scaffold-project-site/tree/main/examples/choirhub) is a full run on a
+community-choir app, left where a real project pauses for its owner: vision, roadmap, decisions, a PRD with the applied-AI pass, a design
 system and HTML mockups, and a spec with the security threat pass and the CTO pass. Start with
-[`examples/choirhub/CONVERSATION.md`](examples/choirhub/CONVERSATION.md), which is everything the
-owner would have seen.
+[`examples/choirhub/CONVERSATION.md`](https://github.com/barannikov07/scaffold-project-site/blob/main/examples/choirhub/CONVERSATION.md),
+which is everything the owner would have seen. The example and the walkthrough site live in their
+own repository, [scaffold-project-site](https://github.com/barannikov07/scaffold-project-site), so a clone of this one contains only the skill.
 
 ## What you get
 
@@ -75,6 +76,8 @@ Codex (same repository, same skill format):
 git clone https://github.com/barannikov07/scaffold-project.git ~/.codex/skills/scaffold-project
 ```
 
+The clone is the skill and nothing else.
+
 Then, in any empty folder, tell your agent "start a new project" or "scaffold this project".
 
 Projects it creates are agent-agnostic too: the router is `AGENTS.md`, which Codex and most agents
@@ -100,8 +103,10 @@ SKILL.md              the procedure Claude follows
 references/           why the structure is shaped this way, the interview, the filling guide
 scripts/scaffold.py   stamps assets/templates into a target folder
 assets/templates/     every generated file, with {{PLACEHOLDERS}}
-evals/                a test scenario used while developing the skill
 ```
+
+That is the whole skill; nothing else is read at runtime. The walkthrough site, the example
+project, and the eval scenario that produced it live in [scaffold-project-site](https://github.com/barannikov07/scaffold-project-site).
 
 ## License
 
